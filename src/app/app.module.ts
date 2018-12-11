@@ -24,10 +24,10 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TechComponent,
-    AuthComponen,
+    AuthComponent,
     ProductItemComponent,
     AjouterPanierComponent,
-    CategoryItemsComponentt
+    CategoryItemsComponent
   ],
   imports: [
     BrowserModule,

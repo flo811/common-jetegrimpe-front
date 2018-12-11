@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductType } from 'src/app/model/productType';
-import { ProductItemComponent } from '../product-item/product-item.component';
+import { ProductService } from '../services/product.service';
+import { Product } from 'src/app/model/product';
 
 @Component({
   selector: 'app-category-items',
@@ -10,11 +11,14 @@ import { ProductItemComponent } from '../product-item/product-item.component';
 
 export class CategoryItemsComponent implements OnInit {
 
-  itemList: ProductItemComponent[]
+  NUMBER_OF_ITEMS: number = 5
+  itemList: Product[]
 
-  constructor(private type: ProductType ) {
-    
-   }
+  constructor(private _type: ProductType, private _prodService: ProductService) {
+    _prodService.getProducts(_type, this.NUMBER_OF_ITEMS)
+      .then(productList => this.itemList = productList)
+      .catch(err => console.log(err))
+  }
 
   ngOnInit() {
   }
