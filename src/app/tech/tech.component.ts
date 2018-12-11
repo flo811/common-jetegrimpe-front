@@ -5,6 +5,7 @@ import {BackendLink} from "./tech.domains";
 /**
  * Composant d'affichage d'informations techniques (liens utiles pour connaître l'état du backend).
  *
+ * 
  * Ce composant permet de valider la communication avec le backend.
  */
 @Component({
