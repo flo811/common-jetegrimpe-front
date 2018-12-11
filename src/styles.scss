@@ -1,0 +1,111 @@
+/***************************************************************** COLOR SITE ***************************************************************************/
+/* -- bleu: #05668D; -- vert: #02C39A; **/
+
+/******************************************************************* GLOBAL *****************************************************************/
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+/********************************************************************* MENU *****************************************************************/
+nav{
+    /*background-color: #02C39A;*/
+    color: #02C39A;
+    padding: 10px 0;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+#menu{
+    display: flex;
+    width: 100%;
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    padding-left: 0;
+}
+
+.menuGauche{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+
+.menuDroite{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 50px;
+}
+
+#menu a{
+    padding: 5px 10px;
+    color: #02C39A;
+}
+
+ul.sousMenu{
+    position: absolute;
+    flex-direction: column;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    background-color: #02C39A;
+    text-align: left;
+}
+
+
+/*
+.active-link{
+    text-transform: uppercase;
+}
+*/
+
+.productMenu:hover ul.sousMenu{
+    opacity: 1;
+    transition: .3s ease-in-out;
+}
+
+
+/********************************************************************* SLIDER ************************************************************************/
+#slider{
+    background: url(https://images.pexels.com/photos/303040/pexels-photo-303040.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 500px;
+}
+
+#slider app-menu{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+#slider .entete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entete p {
+    font-weight: 700;
+    color: white;
+    font-size: 50px;
+    padding: 200px 0;
+}
+
+
+
+
+
+/*************************************************************************** RESPONSIVE **********************************************************************/
+@media screen and (min-width: 1200px){
+    max-width: 100%;
+}
