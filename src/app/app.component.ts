@@ -15,13 +15,14 @@ import {Collegue} from "./auth/auth.domains";
       <div *ngIf="!(collegueConnecte | async).estAnonyme()">
         <span>{{(collegueConnecte | async).email}}</span>
         <span>({{(collegueConnecte | async).roles}})</span>
-        <a  class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
+        <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
       </div>
     </div>
     <router-outlet></router-outlet>
   `,
   styles: []
 })
+
 export class AppComponent implements OnInit {
 
   collegueConnecte:Observable<Collegue>;
@@ -45,8 +46,6 @@ export class AppComponent implements OnInit {
    * Celui lui permet de rester à jour en fonction des connexions et déconnexions.
    */
   ngOnInit(): void {
-
     this.collegueConnecte = this._authSrv.collegueConnecteObs;
   }
-
 }

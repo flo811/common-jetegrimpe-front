@@ -20,6 +20,7 @@ const COLLEGUE_ANONYME = new Collegue({});
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   /**
@@ -71,7 +72,6 @@ export class AuthService {
    * @returns {Observable<Collegue>}
    */
   connecter(email:string, mdp:string):Observable<Collegue> {
-
     const config = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -93,7 +93,6 @@ export class AuthService {
    * @returns {Observable<any>}
    */
   seDeconnecter() {
-
     const config = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'
