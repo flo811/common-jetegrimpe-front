@@ -12,6 +12,9 @@ import {StatutConnecteService} from "./auth/statut-connecte.service";
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
+import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
+import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
+import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
 
 const routes: Routes = [
   {path: 'accueil', component: HomeComponent},
@@ -27,6 +30,9 @@ const routes: Routes = [
     AuthComponent,
     MenuComponent,
     HomeComponent
+    ProductItemComponent,
+    AjouterPanierComponent,
+    CategoryItemsComponent
   ],
   imports: [
     BrowserModule,

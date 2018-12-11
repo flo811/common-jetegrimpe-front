@@ -15,6 +15,8 @@ import {Collegue} from "./auth/auth.domains";
         <span>({{(collegueConnecte | async).roles}})</span>
         <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
       </div>
+    </div>
+    <app-category-items></app-category-items>
     <router-outlet></router-outlet>
   `,
   styles: []
