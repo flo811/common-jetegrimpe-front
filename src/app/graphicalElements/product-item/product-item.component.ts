@@ -9,7 +9,9 @@ import { Product } from 'src/app/model/product';
 
 export class ProductItemComponent implements OnInit {
 
-  constructor(private product: Product) { }
+  product: Product
+
+  constructor(product: Product) { this.product = product }
 
   ngOnInit() {
   }
