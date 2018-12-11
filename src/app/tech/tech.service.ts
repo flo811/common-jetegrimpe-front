@@ -5,13 +5,13 @@ import {environment} from "../../environments/environment";
 import {flatMap, concatMap, delay} from "rxjs/operators";
 import {BackendLink} from "./tech.domains";
 
-
 /**
  * Service donnant accès aux informations techniques.
  */
 @Injectable({
   providedIn: 'root'
 })
+
 export class TechService {
 
   constructor(private _http:HttpClient) { }
@@ -30,5 +30,4 @@ export class TechService {
       ), of(new BackendLink({name: 'versions', href:`${environment.baseUrl}${environment.apiVersion}`})))
       ;
   }
-
 }

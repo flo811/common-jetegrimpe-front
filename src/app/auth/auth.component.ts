@@ -57,8 +57,8 @@ import {Router} from "@angular/router";
   `,
   styles: []
 })
-export class AuthComponent implements OnInit {
 
+export class AuthComponent implements OnInit {
 
   collegue:Collegue = new Collegue({});
   err:boolean;
@@ -78,5 +78,4 @@ export class AuthComponent implements OnInit {
         err =>this.err = true
       );
   }
-
 }

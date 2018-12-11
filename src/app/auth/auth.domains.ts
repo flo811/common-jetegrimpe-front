@@ -2,6 +2,7 @@
  * Collègue utilisateur de l'application.
  */
 export class Collegue {
+  
   nom:string;
   prenom:string;
   email:string;
@@ -15,5 +16,4 @@ export class Collegue {
   estAnonyme():boolean {
     return this.email == undefined;
   }
-
 }

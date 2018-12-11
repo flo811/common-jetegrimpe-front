@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/tech', pathMatch: 'full'}
 ];
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,4 +37,5 @@ const routes: Routes = [
   }],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

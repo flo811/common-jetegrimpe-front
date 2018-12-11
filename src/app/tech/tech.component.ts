@@ -34,6 +34,7 @@ import {BackendLink} from "./tech.domains";
   `,
   styles: []
 })
+
 export class TechComponent implements OnInit {
 
   links:BackendLink[]=[];
