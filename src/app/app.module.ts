@@ -13,6 +13,7 @@ import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
 import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
 import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
+import { CreateProductFormComponent } from './graphicalElements/create-product-form/create-product-form.component';
 
 const routes: Routes = [
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
@@ -20,14 +21,17 @@ const routes: Routes = [
   { path: '', redirectTo: '/tech', pathMatch: 'full'}
 ];
 
+// canActivate:[StatutAdminService] // /tech accessible uniquement si admin
+
 @NgModule({
   declarations: [
     AppComponent,
     TechComponent,
-    AuthComponen,
+    AuthComponent,
     ProductItemComponent,
     AjouterPanierComponent,
-    CategoryItemsComponentt
+    CategoryItemsComponent,
+    CreateProductFormComponent
   ],
   imports: [
     BrowserModule,
