@@ -17,38 +17,50 @@ import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
 import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
 import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
+
 import { CategoriesPreviewComponent } from './graphicalElements/categories-preview/categories-preview.component';
 import { MenuComponent } from './graphicalElements/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CreateProductFormComponent } from './graphicalElements/create-product-form/create-product-form.component';
+import { StatutAdminService } from './auth/statut-admin.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
 
   {path: 'accueil', component: HomeComponent},
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path:'auth', component: AuthComponent},
-  { path: '', redirectTo: '/accueil', pathMatch: 'full'}
+
+  { path: '', redirectTo: '/accueil', pathMatch: 'full'},
+  { path:'createProduct', component: CreateProductFormComponent,canActivate:[StatutAdminService]}, // accessible uniquement si admin
 
 ];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TechComponent,
     AuthComponent,
+
     MenuComponent,
     HomeComponent,
     ProductItemComponent,
     AjouterPanierComponent,
     CategoryItemsComponent,
-    CategoriesPreviewComponent
+    CategoriesPreviewComponent,
 //    ReactiveFormsModule
+    CreateProductFormComponent
+
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

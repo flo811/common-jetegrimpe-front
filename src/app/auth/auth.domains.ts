@@ -16,4 +16,12 @@ export class Collegue {
   estAnonyme():boolean {
     return this.email == undefined;
   }
+
+  estConnuEtAdmin():boolean {
+    if (this.roles == undefined){
+      return false;
+    }
+    
+    return this.roles.includes("ROLE_ADMINISTRATEUR");
+  }
 }

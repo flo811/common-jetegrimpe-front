@@ -62,6 +62,9 @@ export class AuthService {
               ;
   }
 
+
+
+
   /**
    * Connexion de l'utilisateur.
    *
@@ -84,6 +87,8 @@ export class AuthService {
         tap(col => this.collegueConnecteSub.next(col) )
       );
   }
+  
+
 
   /**
    * Déconnexion de l'utilisateur.

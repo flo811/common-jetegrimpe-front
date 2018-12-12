@@ -1,0 +1,84 @@
+<div class="styleFormulaire">
+
+  <h2>Créer un produit</h2>
+
+  <form (ngSubmit)="submit()" #localForm="ngForm">
+
+    <div class="container">
+
+      <div class="row">
+        <label class="col-3" for="name">Nom Produit :</label>
+        <input class="col-6" mdbInput mdbValidate [(ngModel)]="createProdForm.name" name="name" id="name" placeholder="Nom Produit"
+          required minlength="2">
+      </div>
+
+      <div class="row">
+        <label class="col-3" for="photo">Url de l'image :</label>
+        <input class="col-6" mdbInput mdbValidate [(ngModel)]="createProdForm.photo" name="photo" id="photo"
+          placeholder="url" required minlength="2">
+      </div>
+
+      <div class="row select-pattern">
+
+        <label class="col-3" for="categorie">Catégorie</label>
+        <select class="col-6 browser-default custom-select" [(ngModel)]="createProdForm.category" name="categorie" id="categorie">
+          <option value="ProductType.Chausson">Chausson</option>
+          <option value="ProductType.Baudrier">Baudrier</option>
+          <option value="ProductType.Assurage">Assurage</option>
+          <option value="ProductType.Accessoire">Accessoire</option>
+        </select>
+      </div>
+
+
+      <div class="row select-pattern">
+        <label class="col-3" for="state">Disponible à la vente?</label>
+        <select class="col-6 browser-default custom-select" [(ngModel)]="createProdForm.state" name="state" id="state">
+          <option value="true">disponible</option>
+          <option value="false">indisponible</option>
+        </select>
+      </div>
+
+<!-- 
+      <div class="row justify-content-center">
+        <mdb-checkbox class="col-4" [(ngModel)]="createProdForm.state" name="state" [checked]="true" type="boolean">
+          Disponible à la
+          vente </mdb-checkbox>
+      </div> -->
+
+
+      <div class="row">
+        <label class="col-3" for="price">Prix :</label>
+        <input class="col-6" mdbInput mdbValidate [(ngModel)]="createProdForm.price" name="price" id="price" required
+          type="number" >
+      </div>
+
+
+
+      <div class="row">
+        <label class="col-3" for="quantity">Quantité :</label>
+        <input class="col-6" mdbInput mdbValidate [(ngModel)]="createProdForm.quantity" name="quantity" id="quantity"
+          required type="number">
+      </div>
+
+
+
+      <div class="row justify-content-center">
+        <textarea class="col-8 form-control rounded-0" [(ngModel)]="createProdForm.description" name="description" id="description"
+          placeholder="Description du produit" rows="4"></textarea>
+      </div>
+
+
+
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <button type="submit" class="btn blue-gradient btn-block btn-rounded" 
+          [disabled]="(!localForm.valid)">Créer</button>
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+
+
