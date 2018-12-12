@@ -1,3 +1,1 @@
-export enum Sizes {
-    S, M, L
-}
+export enum Sizes { S, M, L }
