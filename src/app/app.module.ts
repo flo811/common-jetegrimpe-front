@@ -13,13 +13,13 @@ import {FormsModule} from "@angular/forms";
 
 import {StatutConnecteService} from "./auth/statut-connecte.service";
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
-import { MenuComponent } from './menu/menu.component';
-import { HomeComponent } from './home/home.component';
 
 import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
 import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
 import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
 import { CategoriesPreviewComponent } from './graphicalElements/categories-preview/categories-preview.component';
+import { MenuComponent } from './graphicalElements/menu/menu.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
 
