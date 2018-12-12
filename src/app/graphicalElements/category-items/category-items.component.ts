@@ -5,7 +5,7 @@ import { ProductItemComponent } from '../product-item/product-item.component';
 @Component({
   selector: 'app-category-items',
   templateUrl: './category-items.component.html',
-  styleUrls: ['./category-items.component.css']
+  styleUrls: ['./category-items.component.scss']
 })
 
 export class CategoryItemsComponent implements OnInit {

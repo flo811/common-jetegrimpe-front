@@ -13,7 +13,7 @@
           "inlineTemplate": false,
           "inlineStyle": false,
           "spec": false,
-          "styleext": "css"
+          "styleext": "scss"
         },
         "@schematics/angular:class": {
           "spec": false
@@ -103,7 +103,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [

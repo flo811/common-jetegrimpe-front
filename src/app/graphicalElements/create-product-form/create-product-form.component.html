@@ -7,41 +7,59 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-offset-4 col-4"> <label>Nom Produit :</label>  </div>
-        <div class="col-4"> <input [(ngModel)]="createProdForm.name" name="name" required minlength="2"> </div>
+        <div class="col-4"> <label for="name">Nom Produit :</label> </div>
+        <div class="col-10"> <input mdbInput mdbValidate [(ngModel)]="createProdForm.name" name="name" id="name"
+            placeholder="Nom Produit" required minlength="2"> </div>
       </div>
 
-      
       <div class="row">
-        <div class="col-offset-4 col-4"> <label>Url de l'image :</label>  </div>
-        <div class="col-4"> <input [(ngModel)]="createProdForm.photo" name="photo" required> </div>
+        <div class="col-5"> <label for="photo">Url de l image :</label> </div>
+        <div class="col-7"> <input mdbInput mdbValidate [(ngModel)]="createProdForm.photo" name="photo" id="photo"
+            required> </div>
       </div>
 
-      
+      <!-- <div class="row">
+        <div class="col-5"> <label for="category">Catégorie :</label> </div>
+        <div class="col-7">
+          <mdb-select [(ngModel)]="createProdForm.category" [options]="categoriesSelect" [multiple]="false" placeholder="Choix de la catégorie"
+            name="category" id="category" required></mdb-select>
+        </div>
+      </div> -->
+
+
       <div class="row">
-        <div class="col-offset-4 col-4"> <label>Descriptif :</label>  </div>
-        <div class="col-4"> <textarea [(ngModel)]="createProdForm.description" name="description" required> </div>
+        <div class="col-5"> <label for="price">Prix :</label> </div>
+        <div class="col-7"> <input mdbInput mdbValidate [(ngModel)]="createProdForm.price" name="price" id="price"
+            required type="number"> </div>
       </div>
 
-      : string; price: number;
-  category: ProductType; state: boolean; quantity: number
 
-      
-          <label>Pseudo</label>
-       <input [(ngModel)]="createProdForm.pseudo" name="pseudo" required>
 
- 
-          <label>url de la photo :</label>
-          <input [(ngModel)]="createProdForm.lienPhoto" name="lienPhoto" required>
-
-    <div class="row justify-content-center">
-      <div class="col-2">
-        <button type="submit" class="btn blue-gradient btn-block btn-rounded" 
-          [disabled]="!localForm.valid">C r é e r</button>
+      <div class="row">
+        <div class="col-3"> <label for="quantity">Quantité :</label> </div>
+        <div class="col-6"> <input mdbInput mdbValidate [(ngModel)]="createProdForm.quantity" name="quantity" id="quantity"
+            required type="number"> </div>
+        <div class="col-3">
+          <mdb-checkbox [(ngModel)]="createProdForm.state" [checked]="true" type="boolean">Disponible à la vente</mdb-checkbox>
+        </div>
       </div>
+
+
+      <!-- <div class="row">
+        <div class="col-5"> <label for="description">Descriptif :</label> </div>
+        <div class="col-7"> <textarea [(ngModel)]="createProdForm.description" name="description" id="description"
+            required> </div>
+      </div> -->
+
+
+      <div class="row justify-content-center">
+        <div class="col-2">
+         <button type="submit" class="btn blue-gradient btn-block btn-rounded" 
+            [disabled]="!localForm.valid">C r é e r</button>
+        </div>
+      </div>
+    
     </div>
+
   </form>
-
-  <!-- <p *ngIf="statusRequete"><strong> Status de l'envoie :</strong> {{statusRequete[1] | json}}</p> -->
-
 </div>

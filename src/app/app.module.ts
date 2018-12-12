@@ -14,14 +14,16 @@ import { ProductItemComponent } from './graphicalElements/product-item/product-i
 import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
 import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
 import { CreateProductFormComponent } from './graphicalElements/create-product-form/create-product-form.component';
+import { StatutAdminService } from './auth/statut-admin.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path:'auth', component: AuthComponent},
-  { path: '', redirectTo: '/tech', pathMatch: 'full'}
+  { path: '', redirectTo: '/tech', pathMatch: 'full'},
+  { path:'createProduct', component: CreateProductFormComponent,canActivate:[StatutAdminService]}, // accessible uniquement si admin
 ];
 
-// canActivate:[StatutAdminService] // /tech accessible uniquement si admin
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
