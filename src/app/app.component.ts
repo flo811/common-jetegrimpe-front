@@ -10,8 +10,6 @@ import { Collegue } from "./auth/auth.domains";
 @Component({
   selector: 'app-root',
   template: `
-    <div class="jumbotron">
-      <h2 class="h1 h1-responsive">Super Application</h2>
       <div *ngIf="!(collegueConnecte | async).estAnonyme()">
         <span>{{(collegueConnecte | async).email}}</span>
         <span>({{(collegueConnecte | async).roles}})</span>
@@ -34,7 +32,7 @@ export class AppComponent implements OnInit {
    */
   seDeconnecter() {
     this._authSrv.seDeconnecter().subscribe(
-      value => this._router.navigate(['/auth'])
+      value => this._router.navigate(['/acceuil'])
     );
   }
 

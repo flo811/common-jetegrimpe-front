@@ -4,6 +4,12 @@
 /******************************************************************* GLOBAL *****************************************************************/
 * {
     box-sizing: border-box;
+    margin: 0;
+}
+
+
+/********************************************************************* MENU *****************************************************************/
+nav{
     margin: 0; 
     }
     
@@ -16,7 +22,14 @@
     width: 100%;
     font-weight: 400;
     font-size: 17px;
-    }
+}
+
+#menu{
+    display: flex;
+    width: 100%;
+}
+
+
     
     #menu{
     display: flex;
@@ -29,26 +42,32 @@
     margin-bottom: 0;
     align-items: center;
     padding-left: 0;
-    }
+}
+
+
     
     .menuGauche{
     width: 100%;
     display: flex;
     justify-content: flex-start;
     padding-left: 50px;
-    }
+}
+
+
     
     .menuDroite{
     display: flex;
     justify-content: flex-end;
     width: 100%;
     padding-right: 50px;
-    }
-    
-    #menu a{
+}
+
+#menu a{
     padding: 5px 10px;
     color: #02C39A;
-    }
+}
+
+
     
     ul.sousMenu{
     position: absolute;
@@ -57,11 +76,25 @@
     transition: .3s ease-in-out;
     background-color: #02C39A;
     text-align: left;
-    margin-top: 5px;
-    }
-    
+}
+
+
+/*
+.active-link{
+    text-transform: uppercase;
+}
+*/
+
+.productMenu:hover ul.sousMenu{
+    opacity: 1;
+    transition: .3s ease-in-out;
+}
+
+
+/********************************************************************* SLIDER ************************************************************************/
     ul.sousMenu a{
     color: white !important;
+      margin-top: 5px;
     }
     
     
@@ -84,14 +117,22 @@
     background-repeat: no-repeat;
     background-position: center;
     min-height: 500px;
-    }
+}
+
     
     #slider app-menu{
     display: flex;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    }
+}
+
+#slider .entete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
     
     #slider .entete{
     display: flex;
@@ -104,6 +145,16 @@
     color: white;
     font-size: 50px;
     padding: 200px 0;
+}
+
+
+
+
+
+/*************************************************************************** RESPONSIVE **********************************************************************/
+@media screen and (min-width: 1200px){
+    max-width: 100%;
+}
     }
     
     
@@ -111,6 +162,4 @@
     
     
     /*************************************************************************** RESPONSIVE **********************************************************************/
-    @media screen and (min-width: 1200px){
-    max-width: 100%;
-    }
+
