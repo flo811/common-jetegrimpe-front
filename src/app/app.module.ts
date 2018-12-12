@@ -8,10 +8,14 @@ import { TechComponent } from './tech/tech.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AuthComponent } from './auth/auth.component';
 import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
 import {StatutConnecteService} from "./auth/statut-connecte.service";
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
+import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
+import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
+import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
 
 const routes: Routes = [
   {path: 'accueil', component: HomeComponent},
@@ -26,14 +30,19 @@ const routes: Routes = [
     TechComponent,
     AuthComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    AuthComponent,
+    ProductItemComponent,
+    AjouterPanierComponent,
+    CategoryItemsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
