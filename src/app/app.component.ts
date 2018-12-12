@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./auth/auth.service";
-import {Router} from "@angular/router";
-import {Observable} from "rxjs/internal/Observable";
-import {Collegue} from "./auth/auth.domains";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from "./auth/auth.service";
+import { Router } from "@angular/router";
+import { Observable } from "rxjs/internal/Observable";
+import { Collegue } from "./auth/auth.domains";
 
 /**
  * Composant principal de l'application.
@@ -16,7 +16,6 @@ import {Collegue} from "./auth/auth.domains";
         <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
       </div>
     </div>
-    <app-category-items></app-category-items>
     <router-outlet></router-outlet>
   `,
   styles: []
@@ -24,11 +23,9 @@ import {Collegue} from "./auth/auth.domains";
 
 export class AppComponent implements OnInit {
 
-  collegueConnecte:Observable<Collegue>;
+  collegueConnecte: Observable<Collegue>;
 
-  constructor(private _authSrv:AuthService, private _router:Router) {
-
-  }
+  constructor(private _authSrv: AuthService, private _router: Router) { }
 
   /**
    * Action déconnecter collègue.
