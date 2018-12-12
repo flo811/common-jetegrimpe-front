@@ -20,7 +20,7 @@ export class StatutAdminService implements CanActivate {
         map(col => col.estConnuEtAdmin()),
         tap(estConnecte => {
           if (!estConnecte) {
-            console.log("here")
+            
             this._router.navigate(['/auth'])
           }
         })
