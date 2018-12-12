@@ -18,7 +18,7 @@ import {Collegue} from "./auth/auth.domains";
         <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
       </div>
     </div>
-    <app-category-items [type]="Chausson"></app-category-items>
+    <app-categories-preview></app-categories-preview>
     <router-outlet></router-outlet>
   `,
   styles: []
@@ -28,9 +28,7 @@ export class AppComponent implements OnInit {
 
   collegueConnecte:Observable<Collegue>;
 
-  constructor(private _authSrv:AuthService, private _router:Router) {
-
-  }
+  constructor(private _authSrv:AuthService, private _router:Router) {  }
 
   /**
    * Action déconnecter collègue.
