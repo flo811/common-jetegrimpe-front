@@ -9,6 +9,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AuthComponent } from './auth/auth.component';
 
 import {FormsModule} from "@angular/forms";
+//import { ReactiveFormsModule } from '@angular/forms';
+
 import {StatutConnecteService} from "./auth/statut-connecte.service";
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import { MenuComponent } from './menu/menu.component';
@@ -34,11 +36,12 @@ const routes: Routes = [
     TechComponent,
     AuthComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
     ProductItemComponent,
     AjouterPanierComponent,
     CategoryItemsComponent,
     CategoriesPreviewComponent
+//    ReactiveFormsModule
   ],
   imports: [
     BrowserModule,

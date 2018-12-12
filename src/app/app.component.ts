@@ -9,15 +9,7 @@ import { Collegue } from "./auth/auth.domains";
  */
 @Component({
   selector: 'app-root',
-  template: `
-      <div *ngIf="!(collegueConnecte | async).estAnonyme()">
-        <span>{{(collegueConnecte | async).email}}</span>
-        <span>({{(collegueConnecte | async).roles}})</span>
-        <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
-      </div>
-    </div>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './app.component.html',
   styles: []
 })
 
