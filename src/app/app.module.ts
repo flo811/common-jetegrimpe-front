@@ -3,21 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TechComponent } from './tech/tech.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AuthComponent } from './auth/auth.component';
-import {FormsModule} from "@angular/forms";
-import {StatutConnecteService} from "./auth/statut-connecte.service";
-import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import { FormsModule } from "@angular/forms";
+import { StatutConnecteService } from "./auth/statut-connecte.service";
+import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
 import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
 import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
+import { CategoriesPreviewComponent } from './graphicalElements/categories-preview/categories-preview.component';
 
 const routes: Routes = [
-  { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
-  { path:'auth', component: AuthComponent},
-  { path: '', redirectTo: '/tech', pathMatch: 'full'}
+  { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
+  { path: 'auth', component: AuthComponent },
+  { path: '', redirectTo: '/tech', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -27,7 +28,8 @@ const routes: Routes = [
     AuthComponent,
     ProductItemComponent,
     AjouterPanierComponent,
-    CategoryItemsComponent
+    CategoryItemsComponent,
+    CategoriesPreviewComponent
   ],
   imports: [
     BrowserModule,
