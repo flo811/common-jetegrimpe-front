@@ -151,10 +151,36 @@ nav{
 
 
 
-/*************************************************************************** RESPONSIVE **********************************************************************/
+/*************************************************************************** AUTHENTIFICATION **********************************************************************/
+@media screen and (min-width: 1280px){
+    #authentification{
+        width: 100%;
+        margin: auto;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        padding: 100px 250px;
+    }
+}
 
-    
-    
+mdb-card-header.white-text.card-header{
+    background-color: #02C39A;
+}
+
+#authentification .btn {
+    background-color: #05668D;
+}
+
+.ajoutUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.ajoutUser p{
+    color: #9e9e9e;
+}
     
     
     
