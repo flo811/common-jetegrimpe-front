@@ -34,7 +34,7 @@ const routes: Routes = [
     TechComponent,
     AuthComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
     ProductItemComponent,
     AjouterPanierComponent,
     CategoryItemsComponent,
