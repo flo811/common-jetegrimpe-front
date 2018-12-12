@@ -18,18 +18,10 @@ export class CreateProductFormComponent implements OnInit {
 
   createProdForm:CreateProdForm = new CreateProdForm();
 
-  categoriesSelect:Array<any>;
-
   // constructor(private _authService:AuthService) { }
   constructor() { }
 
   ngOnInit() {
-    this.categoriesSelect = [
-      { value: ProductType.Chausson, label: 'Chausson' },
-      { value: ProductType.Baudrier, label: 'Baudrier' },
-      { value: ProductType.Assurage, label: 'Assurage' },
-      { value: ProductType.Accessoire, label: 'Accessoire' },
-      ];
   }
 
   submit() {
