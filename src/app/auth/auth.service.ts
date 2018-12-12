@@ -20,7 +20,6 @@ const COLLEGUE_ANONYME = new Collegue({});
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthService {
 
   /**

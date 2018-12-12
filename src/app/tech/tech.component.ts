@@ -47,4 +47,6 @@ export class TechComponent implements OnInit {
      link => this.links.push(link)
    );
   }
+
+
 }

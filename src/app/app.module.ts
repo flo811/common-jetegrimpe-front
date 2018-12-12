@@ -13,6 +13,7 @@ import {FormsModule} from "@angular/forms";
 
 import {StatutConnecteService} from "./auth/statut-connecte.service";
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import { AccountCreateComponent } from './account-create/account-create.component';
 
 import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
 import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
@@ -43,7 +44,7 @@ const routes: Routes = [
     AppComponent,
     TechComponent,
     AuthComponent,
-
+    AccountCreateComponent,
     MenuComponent,
     HomeComponent,
     ProductItemComponent,

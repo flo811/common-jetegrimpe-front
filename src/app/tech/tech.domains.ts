@@ -9,4 +9,4 @@ export class BackendLink {
   constructor(params:any) {
     Object.assign(this, params);
   }
-}
+} 
