@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductType } from 'src/app/model/productType';
-import { HttpClient } from '@angular/common/http';
+
 // import { AuthService } from 'src/app/auth/auth.service';
 
 
