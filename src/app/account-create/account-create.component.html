@@ -1,11 +1,11 @@
 <form (ngSubmit)="submit()" #local="ngForm">
-  <input [(ngModel)]="formInput.name" type="text" placeholder="Nom" name="name">
-  <input [(ngModel)]="formInput.firstname" type="text" placeholder="Prenom" name="firstname">
-  <input [(ngModel)]="formInput.adress" type="adress" placeholder="Adresse" name="adress">
-  <input [(ngModel)]="formInput.phone" type="phone" placeholder="Téléphone" name="phone">
-  <input [(ngModel)]="formInput.email" type="email" placeholder="Email" name="email">
-  <input [(ngModel)]="formInput.birthDate" type="date" placeholder="Date de naissance" name="date">
-  <input [(ngModel)]="formInput.password" type="password" placeholder="Mot de Passe" name="password">
-  <input [(ngModel)]="formInput.confirmPassword" type="password" placeholder="Confirmation d'un mot de passe" name="confirmPassword">
+  <input [(ngModel)]="name" type="text" placeholder="Nom" name="name">
+  <input [(ngModel)]="firstname" type="text" placeholder="Prenom" name="firstname">
+  <input [(ngModel)]="adress" type="adress" placeholder="Adresse" name="adress">
+  <input [(ngModel)]="phone" type="phone" placeholder="Téléphone" name="phone">
+  <input [(ngModel)]="email" type="email" placeholder="Email" name="email">
+  <input [(ngModel)]="birthDate" type="date" placeholder="Date de naissance" name="date">
+  <input [(ngModel)]="password" type="password" placeholder="Mot de Passe" name="password">
+  <input [(ngModel)]="confirmPassword" type="password" placeholder="Confirmation d'un mot de passe" name="confirmPassword">
   <button type="submit">Créer mon compte</button>
 </form>
