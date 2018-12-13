@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormInput } from './model';
 import { AccountCreateService } from '../services/account-create.service';
+
+export class FormInput {
+  name:string;
+  firstName:string;
+  adress:string;
+  phone:number;
+  email:string;
+  birthDate:number;
+  password:string;
+  passwordConfirm:string;
+}
 
 @Component({
   selector: 'app-account-create',
@@ -9,12 +19,12 @@ import { AccountCreateService } from '../services/account-create.service';
 })
 export class AccountCreateComponent implements OnInit {
 
-  formInput = new FormInput();
+  formInput:FormInput = new FormInput();
 
   constructor(private acService:AccountCreateService) { }
 
   submit() {
-    // this.acService.sendInputs(this.formInput)
+    this.acService.sendInputs(this.formInput)
   }
 
   ngOnInit() {
