@@ -16,6 +16,10 @@
           <li><a routerLink="" routerLinkActive="active-link">Gestion des commandes</a></li>
         </div>
         <li><a routerLink="" routerLinkActive="active-link">Mon panier</a></li>
+        <div *ngIf="menuAdmin">
+          <li><a routerLink="" routerLinkActive="active-link">Gestion des produits</a></li>
+          <li><a routerLink="" routerLinkActive="active-link">Gestion des commandes</a></li>
+        </div>
         <li><a routerLink="" routerLinkActive="active-link">Contact</a></li>
       </ul>
     </div>
@@ -30,6 +34,7 @@
           </div>
         </li>
       </ul>      
+
     </div>
   </div>
 </nav> 

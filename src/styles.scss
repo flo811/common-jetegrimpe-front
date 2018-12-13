@@ -29,11 +29,11 @@
     
     #menu ul {
 
-    list-style: none;
-    display: flex;
-    margin-bottom: 0;
-    align-items: center;
-    padding-left: 0;
+        list-style: none;
+        display: flex;
+        margin-bottom: 0;
+        align-items: center;
+        padding-left: 0;
 }
 
 
@@ -74,7 +74,7 @@
 
 ul.sousMenu a{
     color: white !important;
-      margin-top: 5px;
+    margin-top: 10px;
 }
 
 
@@ -187,6 +187,24 @@ mdb-card-header.white-text.card-header{
 }
  
 
+    
+
+
+/******************************************************************************* PRODUITS ************************************************************************/
+.productItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    float: left;
+}
+
+
+.rowCategorie{
+    padding: 50px 0;
+}
+    
+    /*************************************************************************** RESPONSIVE **********************************************************************/
 
 /*************************************************************************** RESPONSIVE **********************************************************************/
 @media screen and (min-width: 1280px) {
