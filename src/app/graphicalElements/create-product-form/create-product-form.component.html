@@ -30,12 +30,18 @@
       </div>
 
 
-      <div class="row select-pattern">
+      <!-- <div class="row select-pattern">
         <label class="col-3" for="state">Disponible à la vente?</label>
         <select class="col-6 browser-default custom-select" [(ngModel)]="createProdForm.state" name="state" id="state">
           <option value="true">disponible</option>
           <option value="false">indisponible</option>
         </select>
+      </div> -->
+
+      
+      <div class="row select-pattern">
+        <label class="col-3" for="state">Disponible à la vente?</label>
+        <input type="checkbox" class="col-6 browser-default custom-select" [(ngModel)]="createProdForm.state" name="state" id="state"> Disponible à la vente? </input>
       </div>
 
 <!-- 
