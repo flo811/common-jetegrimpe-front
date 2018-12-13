@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProductType } from 'src/app/model/productType';
 import { Product } from 'src/app/model/product';
-import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -15,5 +13,15 @@ export class ProductService {
 
   getProducts(type: string, itemNumber: number): Promise<Product[]> {
     return <Promise<Product[]>>this._http.get(environment.baseUrl.concat("product/few?type=" + type + "&number=" + itemNumber)).toPromise()
+  }
+
+  getProductsMultiCriteria(name: string, category: string, priceMin: number, priceMax: number, sort: string, pageNbr: number, nbrByPage: number): Promise<Product[]> {
+    return <Promise<Product[]>>this._http.get(environment.baseUrl.concat("product/criteria?" + "name=" + name + "&category=" + category + "&priceMin=" + priceMin
+      + "&priceMax=" + priceMax + "&sort=" + sort + "&pageNbr=" + pageNbr + "&nbrByPage=" + nbrByPage)).toPromise()
+  }
+
+  getResultNbr(name: string, category: string, priceMin: number, priceMax: number): Promise<number> {
+    return <Promise<number>>this._http.get(environment.baseUrl.concat("product/count?" + "name=" + name + "&category=" + category + "&priceMin=" + priceMin
+      + "&priceMax=" + priceMax)).toPromise()
   }
 }
