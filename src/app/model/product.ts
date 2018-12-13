@@ -1,6 +1,6 @@
 import { ProductType } from "./productType";
 
 export class Product {
-    constructor(private name: string, private photo: string, private description: string, private price: number,
-        private category: ProductType, private state: boolean, private quantity: number) { }
+    constructor(private _name: string, private _photo: string, private _description: string, private _price: number,
+        private _category: ProductType, private _state: boolean, private _quantity: number) { }
 }

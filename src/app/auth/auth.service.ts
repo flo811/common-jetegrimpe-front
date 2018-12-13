@@ -20,7 +20,6 @@ const COLLEGUE_ANONYME = new Collegue({});
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthService {
 
   /**
@@ -62,6 +61,9 @@ export class AuthService {
               ;
   }
 
+
+
+
   /**
    * Connexion de l'utilisateur.
    *
@@ -84,6 +86,8 @@ export class AuthService {
         tap(col => this.collegueConnecteSub.next(col) )
       );
   }
+  
+
 
   /**
    * Déconnexion de l'utilisateur.
