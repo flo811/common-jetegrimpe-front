@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ProductType } from 'src/app/model/productType';
 import { Product } from 'src/app/model/product';
 import { Subject, Observable } from 'rxjs';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 
@@ -21,9 +21,33 @@ export class ProductService {
 
 
   addProducts(newProduct:Product):Promise<HttpResponse<any>> {
-    return this._http.post(environment.baseUrl.concat('product'), newProduct)
+
+    console.log(newProduct)
+
+    let test = {
+                "name": newProduct.name,
+                "photo": newProduct.photo,
+                "description": newProduct.description,
+                "price": newProduct.price,
+                "category": newProduct.category,
+                "state": newProduct.state,
+                "quantity": newProduct.quantity
+    }
+    
+
+    return this._http.post(environment.baseUrl.concat('product'), test,
+                          {headers: new HttpHeaders({"Content-Type": "application/json"})})
                       .toPromise()
                       .then((response:HttpResponse<any>)=>response);
   }
+  
+// ajouterProduit(prod: Product): Promise<Product> {
+
+//   console.log(prod)
+
+//   return this._http.post(environment.baseUrl.concat('product'), prod)
+//     .toPromise().then((c: Product) => c = new Product("this.name","this.photo","this.description",0,ProductType.Baudrier,true,0))
+// }
+
 
 }

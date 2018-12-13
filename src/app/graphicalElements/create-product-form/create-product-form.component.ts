@@ -49,10 +49,13 @@ export class CreateProductFormComponent implements OnInit {
     console.log(this.name, this.category);
 
     this._productService.addProducts(new Product(this.name,this.photo,this.description,this.price,this.category,this.state,this.quantity))
+    
+    
+
     .then((response:HttpResponse<any>) => {
-                                          let stringResult:string =`Status : ${response.status}\n
-                                                         header : ${response.headers}`;
+                                          let stringResult:string =`Status : ${response.status} body : ${response.body}`;
                                           console.log(stringResult);
+                                          console.log(response.body);
                                           if((response.status >= 300)){
                                             this.statusRequete = [1,stringResult];
                                           }else{
@@ -65,6 +68,7 @@ export class CreateProductFormComponent implements OnInit {
                     this.statusRequete = [0,stringResult]
                   })
 
+    // this._productService.ajouterProduit(new Product(this.name,this.photo,this.description,this.price,this.category,this.state,this.quantity))
     
 
 
