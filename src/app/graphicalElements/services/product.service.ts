@@ -20,22 +20,11 @@ export class ProductService {
 
 
 
-  addProducts(newProduct:Product):Promise<HttpResponse<any>> {
+  addProducts(newProduct:any):Promise<HttpResponse<any>> {
 
     console.log(newProduct)
 
-    let test = {
-                "name": newProduct.name,
-                "photo": newProduct.photo,
-                "description": newProduct.description,
-                "price": newProduct.price,
-                "category": newProduct.category,
-                "state": newProduct.state,
-                "quantity": newProduct.quantity
-    }
-    
-
-    return this._http.post(environment.baseUrl.concat('product'), test,
+    return this._http.post(environment.baseUrl.concat('product'), newProduct,
                           {headers: new HttpHeaders({"Content-Type": "application/json"})})
                       .toPromise()
                       .then((response:HttpResponse<any>)=>response);

@@ -48,10 +48,18 @@ export class CreateProductFormComponent implements OnInit {
   submit() {
     console.log(this.name, this.category);
 
-    this._productService.addProducts(new Product(this.name,this.photo,this.description,this.price,this.category,this.state,this.quantity))
     
+    let newProduct = {
+      "name": this.name,
+      "photo": this.photo,
+      "description": this.description,
+      "price": this.price,
+      "category": this.category,
+      "state": this.state,
+      "quantity": this.quantity
+    }
     
-
+    this._productService.addProducts(newProduct)
     .then((response:HttpResponse<any>) => {
                                           let stringResult:string =`Status : ${response.status} body : ${response.body}`;
                                           console.log(stringResult);
