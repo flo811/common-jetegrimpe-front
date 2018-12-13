@@ -25,8 +25,11 @@ import { CategoryItemsComponent } from './graphicalElements/category-items/categ
 import { CategoriesPreviewComponent } from './graphicalElements/categories-preview/categories-preview.component';
 import { MenuComponent } from './graphicalElements/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
+
 import { CreateProductFormComponent } from './graphicalElements/create-product-form/create-product-form.component';
 import { StatutAdminService } from './auth/statut-admin.service';
+import { SearchComponent } from './pages/search/search.component';
+import { SearchBarComponent } from './graphicalElements/search-bar/search-bar.component';
 
 
 const routes: Routes = [
@@ -54,6 +57,8 @@ const routes: Routes = [
     AjouterPanierComponent,
     CategoryItemsComponent,
     CategoriesPreviewComponent,
+    SearchComponent,
+    SearchBarComponent,
 //    ReactiveFormsModule
     CreateProductFormComponent
 

@@ -10,7 +10,7 @@ import { Product } from 'src/app/model/product';
 
 export class CategoryItemsComponent implements OnInit {
 
-  NUMBER_OF_ITEMS: number = 5
+  NUMBER_OF_ITEMS: number = 4;
 
   @Input() type: string
   itemList: Product[]
