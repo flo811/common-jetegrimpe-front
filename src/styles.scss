@@ -7,18 +7,13 @@
     margin: 0;
 }
 
-
-/********************************************************************* MENU *****************************************************************/
-nav{
-    margin: 0; 
-    }
-    
     
     /********************************************************************* MENU *****************************************************************/
     nav{
     /*background-color: #02C39A;*/
+    margin: 0; 
     color: #02C39A;
-    padding: 10px 0;
+    padding: 20px 0;
     width: 100%;
     font-weight: 400;
     font-size: 17px;
@@ -29,24 +24,18 @@ nav{
     width: 100%;
 }
 
-
-    
-    #menu{
+   
+#menu ul {
+    list-style: none;
     display: flex;
-    width: 100%;
-    }
-    
-    #menu ul {
-        list-style: none;
-        display: flex;
-        margin-bottom: 0;
-        align-items: center;
-        padding-left: 0;
+    margin-bottom: 0;
+    align-items: center;
+    padding-left: 0;
 }
 
 
     
-    .menuGauche{
+.menuGauche{
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -55,7 +44,7 @@ nav{
 
 
     
-    .menuDroite{
+.menuDroite{
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -63,22 +52,26 @@ nav{
 }
 
 #menu a{
-    padding: 5px 10px;
+    padding: 25px 10px;
     color: #02C39A;
 }
 
 
     
-    ul.sousMenu{
+ul.sousMenu{
     position: absolute;
     flex-direction: column;
     opacity: 0;
     transition: .3s ease-in-out;
     background-color: #02C39A;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
+ul.sousMenu a{
+    color: white !important;
+      margin-top: 5px;
+}
 
 /*
 .active-link{
@@ -91,28 +84,10 @@ nav{
     transition: .3s ease-in-out;
 }
 
-
+  
+    
 /********************************************************************* SLIDER ************************************************************************/
-    ul.sousMenu a{
-    color: white !important;
-      margin-top: 5px;
-    }
-    
-    
-    /*
-    .active-link{
-    text-transform: uppercase;
-    }
-    */
-    
-    .menuHover:hover ul.sousMenu{
-    opacity: 1;
-    transition: .3s ease-in-out;
-    }
-    
-    
-    /********************************************************************* SLIDER ************************************************************************/
-    #slider{
+#slider{
     background: url(https://images.pexels.com/photos/303040/pexels-photo-303040.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
     background-size: cover;
     background-repeat: no-repeat;
@@ -121,7 +96,7 @@ nav{
 }
 
     
-    #slider app-menu{
+#slider app-menu{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -134,14 +109,7 @@ nav{
     align-items: center;
 }
 
-    
-    #slider .entete{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .entete p {
+.entete p {
     font-weight: 700;
     color: white;
     font-size: 50px;
@@ -215,5 +183,47 @@ app-order-management .md-form{
     width: 50%;
 }
   */  
-    /*************************************************************************** RESPONSIVE **********************************************************************/
 
+
+/**************************************************************************** PAGE PRODUIT ****************************************************/
+#rowProduit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+#rowProduit svg{
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 15px;
+    fill: white;
+}
+
+.blocProduit:nth-child(1), .blocProduit:nth-child(3){
+    background-color: #02C39A;
+}
+
+.blocProduit:nth-child(2), .blocProduit:nth-child(4){
+    background-color: #05668D;
+}
+
+.blocProduit p{
+    margin-bottom: 0;
+}
+
+.blocProduit{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    margin: 0 1%;
+    cursor: pointer;
+    width: 15%;
+}
+
+
+    /*************************************************************************** RESPONSIVE **********************************************************************/
