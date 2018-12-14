@@ -22,11 +22,14 @@ import { MenuComponent } from './graphicalElements/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchBarComponent } from './graphicalElements/search-bar/search-bar.component';
+import { OrderManagementComponent } from './pages/order-management/order-management.component';
+import { ModifyProductComponent } from './graphicalElements/modify-product/modify-product.component';
 
 const routes: Routes = [
 
   {path: 'accueil', component: HomeComponent},
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
+  { path: 'gestion-des-produits', component: OrderManagementComponent},
   { path:'auth', component: AuthComponent},
   { path: '', redirectTo: '/accueil', pathMatch: 'full'}
 
@@ -44,7 +47,9 @@ const routes: Routes = [
     CategoryItemsComponent,
     CategoriesPreviewComponent,
     SearchComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    OrderManagementComponent,
+    ModifyProductComponent
 //    ReactiveFormsModule
   ],
   imports: [

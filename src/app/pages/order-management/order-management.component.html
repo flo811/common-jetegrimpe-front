@@ -1,0 +1,15 @@
+<div id="form">
+    <div class="md-form">
+        <i class="fa fa-search prefix grey-text"></i>
+        <input [(ngModel)]="search" type="search" [validateSuccess]="false" data-error="Pour modifier un produit, sélectionner d'abord le produit" id="defaultForm-search" class="form-control" name="search" mdbInputDirective #champ1="ngModel" required>
+        <label for="defaultForm-search">Rechercher un produit</label>
+    </div>
+
+    <div class="text-center">
+        <input type="submit" mdbBtn class="waves-light btn" mdbWavesEffect value="Ajouter un produit">
+        <input type="submit" mdbBtn class="waves-light btn" mdbWavesEffect value="Supprimer un produit">
+        <input type="submit" mdbBtn class="waves-light btn" mdbWavesEffect value="Modifier un produit" (click)="setVisible()">
+    </div>
+</div>
+
+<app-modify-product *ngIf="visible"></app-modify-product>

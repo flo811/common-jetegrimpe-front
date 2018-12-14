@@ -154,7 +154,7 @@ nav{
 
 /*************************************************************************** AUTHENTIFICATION **********************************************************************/
 @media screen and (min-width: 1280px){
-    #authentification{
+    #form{
         width: 100%;
         margin: auto;
         display: flex; 
@@ -168,8 +168,12 @@ mdb-card-header.white-text.card-header{
     background-color: #02C39A;
 }
 
-#authentification .btn {
+#form .btn {
     background-color: #05668D;
+}
+
+#form mdb-card.animated.zoomIn.card{
+    width: 50%;
 }
 
 .ajoutUser{
@@ -199,6 +203,17 @@ mdb-card-header.white-text.card-header{
 .rowCategorie{
     padding: 50px 0;
 }
-    
+
+
+/************************************************************************ FORMULAIRE *****************************************************************/
+app-order-management #form{
+    flex-direction: column;
+}
+
+/*
+app-order-management .md-form{
+    width: 50%;
+}
+  */  
     /*************************************************************************** RESPONSIVE **********************************************************************/
 
