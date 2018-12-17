@@ -24,6 +24,8 @@ export class ProductService {
 
     console.log(newProduct)
 
+    
+
     return this._http.post(environment.baseUrl.concat('product'), newProduct,
                           {headers: new HttpHeaders({"Content-Type": "application/json"})})
                       .toPromise()

@@ -54,13 +54,18 @@ export class CreateProductFormComponent implements OnInit {
       "photo": this.photo,
       "description": this.description,
       "price": this.price,
-      "category": this.category,
+      "category": this.category.toString,
       "state": this.state,
       "quantity": this.quantity
-    }
+}
+
+    // this._productService.addProducts(new Product(this.name,this.photo,this.description,this.price,this.category,this.state,this.quantity))
     
     this._productService.addProducts(newProduct)
-    .then((response:HttpResponse<any>) => {
+    
+    
+
+    .then((response:any) => {
                                           let stringResult:string =`Status : ${response.status} body : ${response.body}`;
                                           console.log(stringResult);
                                           console.log(response.body);
@@ -71,7 +76,8 @@ export class CreateProductFormComponent implements OnInit {
                                           }
                                         })
     .catch((err:HttpErrorResponse) => {
-                    let stringResult:string = `requête échouée : ${err.message}`;
+      console.log(err);
+                    let stringResult:string = `${err.message}`;
                     console.log(stringResult);
                     this.statusRequete = [0,stringResult]
                   })
