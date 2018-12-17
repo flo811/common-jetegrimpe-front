@@ -19,7 +19,6 @@ import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AccountCreateComponent } from './account-create/account-create.component';
 
 import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
-import { AjouterPanierComponent } from './graphicalElements/ajouter-panier/ajouter-panier.component';
 import { CategoryItemsComponent } from './graphicalElements/category-items/category-items.component';
 
 import { CategoriesPreviewComponent } from './graphicalElements/categories-preview/categories-preview.component';
@@ -35,21 +34,23 @@ import { ModifyProductComponent } from './graphicalElements/modify-product/modif
 import { ProductComponent } from './pages/product/product.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { PanierDisplayComponent } from './pages/panier-display/panier-display.component';
 
 const routes: Routes = [
 
-
-  {path: 'accueil', component: HomeComponent},
-  { path: 'produits', component: ProductComponent},
+  
   { path: 'creer-compte', component: AccountCreateComponent },
-  { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
-  { path: 'gestion-des-produits', component: OrderManagementComponent},
-  { path: 'contact', component : ContactComponent },
-  { path:'auth', component: AuthComponent},
-  { path: '', redirectTo: '/accueil', pathMatch: 'full'},
-  { path:'createProduct', component: CreateProductFormComponent,canActivate:[StatutAdminService]}, // accessible uniquement si admin
+  { path: 'accueil', component: HomeComponent },
+  { path: 'detail/:name', component: ProductDetailComponent },
+  { path: 'produits', component: SearchComponent },
+  { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
+  { path: 'gestion-des-produits', component: OrderManagementComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'panier', component: PanierDisplayComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+  { path: 'createProduct', component: CreateProductFormComponent, canActivate: [StatutAdminService] }, // accessible uniquement si admin
 ];
-
 
 @NgModule({
   declarations: [
@@ -61,7 +62,6 @@ const routes: Routes = [
     HomeComponent,
     AuthComponent,
     ProductItemComponent,
-    AjouterPanierComponent,
     CategoryItemsComponent,
     CategoriesPreviewComponent,
     SearchComponent,
@@ -69,9 +69,10 @@ const routes: Routes = [
     ModifyProductComponent,
     ProductComponent,
     ContactComponent,
-//    ReactiveFormsModule
+    //    ReactiveFormsModule
     CreateProductFormComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    PanierDisplayComponent
   ],
   imports: [
     BrowserModule,

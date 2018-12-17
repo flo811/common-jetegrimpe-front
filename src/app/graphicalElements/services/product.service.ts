@@ -24,30 +24,17 @@ export class ProductService {
     return <Promise<Product[]>>this._http.get(environment.baseUrl.concat("product/few?category=" + category + "&number=" + itemNumber)).toPromise()
   }
 
-
-
-  addProducts(newProduct:any):Promise<HttpResponse<any>> {
-
+  addProducts(newProduct: any): Promise<HttpResponse<any>> {
     console.log(newProduct)
-
-
     return this._http.post(environment.baseUrl.concat('product'), newProduct,
-                          {headers: new HttpHeaders({"Content-Type": "application/json"})})
-                      .toPromise()
-                      .then((response:HttpResponse<any>)=>response);
+      { headers: new HttpHeaders({ "Content-Type": "application/json" }) })
+      .toPromise()
+      .then((response: HttpResponse<any>) => response);
   }
-  
-// ajouterProduit(prod: Product): Promise<Product> {
-
-//   console.log(prod)
-
-//   return this._http.post(environment.baseUrl.concat('product'), prod)
-//     .toPromise().then((c: Product) => c = new Product("this.name","this.photo","this.description",0,ProductType.Baudrier,true,0))
-// }
 
 
   // Patch method to modify a product
-  modifyProduct(product:Product):Promise<Product>{
+  modifyProduct(product: Product): Promise<Product> {
     return <Promise<Product>>this._http.patch(environment.baseUrl + "productModif/" + name, product).toPromise()
   }
 
