@@ -85,13 +85,5 @@ export class CreateProductFormComponent implements OnInit {
                     console.log(stringResult);
                     this.statusRequete = [0,stringResult]
                   })
-<<<<<<< HEAD
-=======
-
-    // this._productService.ajouterProduit(new Product(this.name,this.photo,this.description,this.price,this.category,this.state,this.quantity))
-    
-
-
->>>>>>> Matth2
   }
 }
