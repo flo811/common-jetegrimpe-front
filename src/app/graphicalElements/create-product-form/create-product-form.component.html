@@ -14,18 +14,21 @@
 
       <div class="row">
         <label class="col-3" for="photo">Url de l'image :</label>
-        <input class="col-6" mdbInput mdbValidate [(ngModel)]="photo" name="photo" id="photo"
-          placeholder="url" required minlength="2">
+        <input class="col-6" mdbInput mdbValidate [(ngModel)]="photo" name="photo" id="photo" placeholder="url"
+          required minlength="2">
       </div>
 
       <div class="row select-pattern">
 
         <label class="col-3" for="categorie">Catégorie</label>
         <select class="col-6 browser-default custom-select" [(ngModel)]="category" name="categorie" id="categorie">
-          <option value="ProductType.Chausson">Chausson</option>
+          
+            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+            
+          <!-- <option value="ProductType.Chausson">Chausson</option>
           <option value="ProductType.Baudrier">Baudrier</option>
           <option value="ProductType.Assurage">Assurage</option>
-          <option value="ProductType.Accessoire">Accessoire</option>
+          <option value="ProductType.Accessoire">Accessoire</option> -->
         </select>
       </div>
 
@@ -38,13 +41,13 @@
         </select>
       </div> -->
 
-      
+
       <div class="row justify-content-center">
         <label class="col-3" for="state">Disponible à la vente?</label>
         <input type="checkbox" class="col-1" [(ngModel)]="state" name="state" id="state" placeholder="Disponible à la vente?">
       </div>
 
-<!-- 
+      <!-- 
       <div class="row justify-content-center">
         <mdb-checkbox class="col-4" [(ngModel)]="createProdForm.state" name="state" [checked]="true" type="boolean">
           Disponible à la
@@ -54,16 +57,14 @@
 
       <div class="row">
         <label class="col-3" for="price">Prix :</label>
-        <input class="col-6" mdbInput mdbValidate [(ngModel)]="price" name="price" id="price" required
-          type="number" >
+        <input class="col-6" mdbInput mdbValidate [(ngModel)]="price" name="price" id="price" required type="number">
       </div>
 
 
 
       <div class="row">
         <label class="col-3" for="quantity">Quantité :</label>
-        <input class="col-6" mdbInput mdbValidate [(ngModel)]="quantity" name="quantity" id="quantity"
-          required type="number">
+        <input class="col-6" mdbInput mdbValidate [(ngModel)]="quantity" name="quantity" id="quantity" required type="number">
       </div>
 
 
@@ -77,8 +78,7 @@
 
       <div class="row justify-content-center">
         <div class="col-2">
-          <button type="submit" class="btn blue-gradient btn-block btn-rounded" 
-          [disabled]="(!localForm.valid)||(!positiveValue())">Créer</button>
+          <button type="submit" class="btn blue-gradient btn-block btn-rounded" [disabled]="(!localForm.valid)||(!positiveValue())">Créer</button>
         </div>
       </div>
 
@@ -86,8 +86,7 @@
 
   </form>
 
-  
+
   <p *ngIf="statusRequete"><strong> Status de l'envoie :</strong> {{statusRequete[1] | json}}</p>
 
 </div>
-

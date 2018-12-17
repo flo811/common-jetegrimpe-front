@@ -11,27 +11,27 @@
             <li><a routerLink="" routerLinkActive="active-link">Accessoires</a></li>
           </ul>
         </li>
-        <div *ngIf="menuAdmin">
+        <!--<div *ngIf="menuAdmin">-->
           <li><a routerLink="" routerLinkActive="active-link">Gestion des produits</a></li>
           <li><a routerLink="" routerLinkActive="active-link">Gestion des commandes</a></li>
-        </div>
+        <!-- </div> -->
         <li><a routerLink="" routerLinkActive="active-link">Mon panier</a></li>
-        <div *ngIf="menuAdmin">
+        <!-- <div *ngIf="menuAdmin"> -->
           <li><a routerLink="" routerLinkActive="active-link">Gestion des produits</a></li>
           <li><a routerLink="" routerLinkActive="active-link">Gestion des commandes</a></li>
-        </div>
+        <!-- </div> -->
         <li><a routerLink="" routerLinkActive="active-link">Contact</a></li>
       </ul>
     </div>
     <div class="menuDroite">
       <ul>
         <li class="menuHover"><a routerLink="/auth" routerLinkActive="active-link">Connexion</a>
-          <div *ngIf="menuVisiteur">
+          <!-- <div *ngIf="menuVisiteur"> -->
            <ul class="sousMenu">
              <li><a routerLink="" routerLinkActice="active-link">Mon profil</a></li>
              <li><a routerLink="" routerLinkActive="active-link">Historique de mes commandes</a></li>
             </ul>
-          </div>
+          <!-- </div> -->
         </li>
       </ul>      
 

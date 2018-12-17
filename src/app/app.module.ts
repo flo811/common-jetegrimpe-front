@@ -34,10 +34,10 @@ import { SearchBarComponent } from './graphicalElements/search-bar/search-bar.co
 
 const routes: Routes = [
 
+
   {path: 'accueil', component: HomeComponent},
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path:'auth', component: AuthComponent},
-
   { path: '', redirectTo: '/accueil', pathMatch: 'full'},
   { path:'createProduct', component: CreateProductFormComponent,canActivate:[StatutAdminService]}, // accessible uniquement si admin
 
