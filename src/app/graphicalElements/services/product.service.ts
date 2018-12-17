@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/model/product';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-
-import { Subject} from 'rxjs';
+import { Subject } from 'rxjs';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 
@@ -25,11 +24,28 @@ export class ProductService {
     return <Promise<Product[]>>this._http.get(environment.baseUrl.concat("product/few?type=" + type + "&number=" + itemNumber)).toPromise()
   }
 
-  addProducts(newProduct:Product):Promise<HttpResponse<any>> {
-    return this._http.post(environment.baseUrl.concat('product'), newProduct)
+
+
+  addProducts(newProduct:any):Promise<HttpResponse<any>> {
+
+    console.log(newProduct)
+
+    
+
+    return this._http.post(environment.baseUrl.concat('product'), newProduct,
+                          {headers: new HttpHeaders({"Content-Type": "application/json"})})
                       .toPromise()
                       .then((response:HttpResponse<any>)=>response);
   }
+  
+// ajouterProduit(prod: Product): Promise<Product> {
+
+//   console.log(prod)
+
+//   return this._http.post(environment.baseUrl.concat('product'), prod)
+//     .toPromise().then((c: Product) => c = new Product("this.name","this.photo","this.description",0,ProductType.Baudrier,true,0))
+// }
+
 
   // Patch method to modify a product
   modifyProduct(product:Product):Promise<Product>{
