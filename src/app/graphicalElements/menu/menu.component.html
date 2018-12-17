@@ -3,7 +3,7 @@
     <div class="menuGauche">
       <ul>
         <li><a routerLink="/accueil" routerLinkActive="active-link">Accueil</a></li>
-        <li class="menuHover"><a routerLink="" routerLinkActive="active-link">Produits</a>
+        <li class="menuHover"><a routerLink="/produits" routerLinkActive="active-link">Produits</a>
 
           <ul class="sousMenu">
             <li><a routerLink="" routerLinkActive="active-link">Chaussons</a></li>
@@ -27,12 +27,12 @@
     <div class="menuDroite">
       <ul>
         <li class="menuHover"><a routerLink="/auth" routerLinkActive="active-link">Connexion</a>
-          <div *ngIf="menuVisiteur">
+          <!--<div *ngIf="menuVisiteur">-->
            <ul class="sousMenu">
              <li><a routerLink="" routerLinkActice="active-link">Mon profil</a></li>
              <li><a routerLink="" routerLinkActive="active-link">Historique de mes commandes</a></li>
             </ul>
-          </div>
+          <!--</div>-->
         </li>
       </ul>      
 

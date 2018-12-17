@@ -9,21 +9,23 @@ import { AccountCreateService } from '../graphicalElements/services/account-crea
 
 export class AccountCreateComponent implements OnInit {
 
-  lastName: string;
+  name: string;
   firstName: string;
   adress: string;
   phone: number;
   email: string;
-  birthDate: Date;
+  birthDate: string;
   password: string;
   passwordConfirm: string;
+
+  response:string;
 
   constructor(private acService: AccountCreateService) { }
 
   submit() {
-    this.acService.sendInputs({
-      "lastName": this.lastName, "firstName": this.firstName, "adress": this.adress, "phone": this.phone, "email": this.email, "birthDate": this.birthDate, "password": this.password
-    })
+    this.acService.addPerson(this.name, this.firstName, this.adress, this.phone, this.email, this.birthDate, this.password)
+                      .then((message:any) => {console.log(`${message.message}`); return this.response="succès"})
+                      .catch(err => {console.log(`${err.message}`); return this.response = "echec"})
   }
 
   ngOnInit() {

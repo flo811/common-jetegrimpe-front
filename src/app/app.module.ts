@@ -40,6 +40,7 @@ const routes: Routes = [
 
   {path: 'accueil', component: HomeComponent},
   { path: 'produits', component: ProductComponent},
+  { path: 'creer-compte', component: AccountCreateComponent },
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
   { path: 'gestion-des-produits', component: OrderManagementComponent},
   { path: 'contact', component : ContactComponent },

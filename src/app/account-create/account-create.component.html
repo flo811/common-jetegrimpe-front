@@ -1,3 +1,4 @@
+<!--
 <form (ngSubmit)="submit()" #local="ngForm">
   <input [(ngModel)]="name" type="text" placeholder="Nom" name="name">
   <input [(ngModel)]="firstname" type="text" placeholder="Prenom" name="firstname">
@@ -9,3 +10,74 @@
   <input [(ngModel)]="confirmPassword" type="password" placeholder="Confirmation d'un mot de passe" name="confirmPassword">
   <button type="submit">Créer mon compte</button>
 </form>
+-->
+
+<div id="form">
+  <mdb-card class="animated zoomIn">
+    <mdb-card-header class="white-text">
+      <h4 class="text-center">Créer un compte</h4>
+    </mdb-card-header>
+    <mdb-card-body>
+
+      <form (ngSubmit)="submit()" #localForm="ngForm">
+        <div class="md-form">
+          <i class="fa fa-search prefix grey-text"></i>
+          <input [(ngModel)]="name" type="text" [validateSuccess]="false" data-error="Ajouter votre nom" id="defaultForm-name" class="form-control" name="name" mdbInputDirective required>
+          <label for="defaultForm-name">Nom</label>
+        </div>
+
+
+        <div class="md-form">
+          <i class="fa fa-tag prefix grey-text"></i>
+          <input [(ngModel)]="firstName" type="text" [validateSuccess]="false" data-error="Ajouter votre prénom" id="defaultForm-firstName" class="form-control" name="firstName" mdbInputDirective required>
+          <label for="defaultForm-firstName">Prénom</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-map-marker prefix grey-text"></i>
+          <input [(ngModel)]="adress" type="text" id="defaultForm-adress" [validateSuccess]="false"  data-error="Veuillez rentrer votre adresse" name="adress" class="form-control" mdbInputDirective required>
+          <label for="defaultForm-adress">Adresse</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-mobile prefix grey-text"></i>
+          <input [(ngModel)]="phone" type="number" id="defaultForm-phone" [validateSuccess]="false"  data-error="Veuillez rentrer votre numéro de téléphone" name="phone" class="form-control" mdbInputDirective required>
+          <label for="defaultForm-phone">Téléphone</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <input [(ngModel)]="email" type="text" id="defaultForm-email" [validateSuccess]="false"  data-error="Veuillez rentrer votre email" name="email" class="form-control" mdbInputDirective required>
+          <label for="defaultForm-email">E-mail</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-birthday-cake prefix grey-text"></i>
+          <input [(ngModel)]="birthDate" type="date" id="defaultForm-birthDate" [validateSuccess]="false"  data-error="Votre date de naissance est requise" name="birthDate" class="form-control" mdbInputDirective required>
+          <!-- <label for="defaultForm-birthDate">Date de naissance</label> -->
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-key prefix grey-text"></i>
+          <input [(ngModel)]="password" type="password" id="defaultForm-password" [validateSuccess]="false"  data-error="Veuillez rentrer un mot de passe" name="password" class="form-control" mdbInputDirective required>
+          <label for="defaultForm-password">Mot de passe</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-key prefix grey-text"></i>
+          <input [(ngModel)]="confirmPassword" type="password" id="defaultForm-confirmPassword" [validateSuccess]="false"  data-error="Veuillez confirmer votre mot de passe" name="confirmPassword" class="form-control" mdbInputDirective required>
+          <label for="defaultForm-confirmPassword">Confirmer le mot de passe</label>
+        </div>
+
+
+        <div class="text-center">
+          <input type="submit" mdbBtn class="waves-light btn" mdbWavesEffect value="Sauvegarder">
+        </div>
+        <div *ngIf="err" class="text-danger">
+          Oops, les informations saisies ne permettent pas de vous authentifier.
+        </div>
+      </form>
+      <div *ngIf="response">{{response|json}}</div>
+    </mdb-card-body>
+  </mdb-card>
+</div>
