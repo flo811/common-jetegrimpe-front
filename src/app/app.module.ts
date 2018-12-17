@@ -38,6 +38,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 
 const routes: Routes = [
 
+
   {path: 'accueil', component: HomeComponent},
   { path: 'produits', component: ProductComponent},
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
