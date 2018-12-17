@@ -27,7 +27,7 @@ export class CreateProductFormComponent implements OnInit {
   state: boolean; 
   quantity: number
 
-  statusRequete:[number, string];
+  statusRequete:string;
   minValue: number = 0;
 
   categories:string[]=Object.values(ProductType);
@@ -62,23 +62,7 @@ export class CreateProductFormComponent implements OnInit {
     
     this._productService.addProducts(newProduct)
     
-    
-
-    .then((response:any) => {
-                                          let stringResult:string =`Status : ${response.status} body : ${response.body}`;
-                                          console.log(stringResult);
-                                          console.log(response.body);
-                                          if((response.status >= 300)){
-                                            this.statusRequete = [1,stringResult];
-                                          }else{
-                                            this.statusRequete = [2,stringResult];
-                                          }
-                                        })
-    .catch((err:HttpErrorResponse) => {
-      console.log(err);
-                    let stringResult:string = `${err.message}`;
-                    console.log(stringResult);
-                    this.statusRequete = [0,stringResult]
-                  })
+    .then((response:any) => {this.statusRequete = response.message;})
+    .catch((err:HttpErrorResponse) => {this.statusRequete = `Requête échouée : ${err.error.message}`;})
   }
 }
