@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductType } from 'src/app/model/productType';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import {  HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
 import { Product } from 'src/app/model/product';
 // import { AuthService } from 'src/app/auth/auth.service';
@@ -13,6 +13,10 @@ import { Product } from 'src/app/model/product';
 
 
 
+class CreateProdForm {
+  name: string; photo: string; description: string; price: number;
+  category: ProductType; state: boolean; quantity: number
+}
 
 @Component({
   selector: 'app-create-product-form',
@@ -64,10 +68,5 @@ export class CreateProductFormComponent implements OnInit {
                     console.log(stringResult);
                     this.statusRequete = [0,stringResult]
                   })
-
-    
-
-
   }
-
 }

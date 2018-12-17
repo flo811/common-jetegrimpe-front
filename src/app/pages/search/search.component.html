@@ -1,3 +1,30 @@
-<p>
-  search works!
-</p>
+<div>
+    <input type="text" placeholder="Nom du produit" [(ngModel)]="name">
+    Catégorie
+    <select [(ngModel)]="category">
+      <option value="tous" selected>Tous</option>
+      <option *ngFor='let cat of types' [value]="cat">
+        {{cat}}
+      </option>
+    </select>
+    Prix min <input type="number" [(ngModel)]="priceMin">
+    Prix max <input type="number" [(ngModel)]="priceMax">
+    Trier par prix
+    <select [(ngModel)]="sort">
+      <option value="asc">Croissants</option>
+      <option value="desc">Décroissants</option>
+    </select>
+    <button (click)="search()">Chercher</button>
+  </div>
+  
+  <div>
+    <div *ngFor="let element of resultList">
+      <app-product-item [product]="element"></app-product-item>
+    </div>
+  </div>
+  
+  <div>
+    <div *ngFor='let page of pageNbrList'>
+      <button (click)="setPage(page)">{{page}}</button>
+    </div>
+  </div>

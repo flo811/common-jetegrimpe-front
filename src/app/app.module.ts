@@ -8,14 +8,14 @@ import { TechComponent } from './tech/tech.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AuthComponent } from './auth/auth.component';
 
-import {FormsModule} from "@angular/forms";
- 
-import {ReactiveFormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
+
+import { ReactiveFormsModule } from "@angular/forms";
 
 //import { ReactiveFormsModule } from '@angular/forms';
 
-import {StatutConnecteService} from "./auth/statut-connecte.service";
-import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import { StatutConnecteService } from "./auth/statut-connecte.service";
+import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AccountCreateComponent } from './account-create/account-create.component';
 
 import { ProductItemComponent } from './graphicalElements/product-item/product-item.component';
@@ -29,12 +29,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { CreateProductFormComponent } from './graphicalElements/create-product-form/create-product-form.component';
 import { StatutAdminService } from './auth/statut-admin.service';
 import { SearchComponent } from './pages/search/search.component';
-import { SearchBarComponent } from './graphicalElements/search-bar/search-bar.component';
+
 import { OrderManagementComponent } from './pages/order-management/order-management.component';
 import { ModifyProductComponent } from './graphicalElements/modify-product/modify-product.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ContactComponent } from './pages/contact/contact.component';
-
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
 
@@ -44,10 +44,8 @@ const routes: Routes = [
   { path: 'gestion-des-produits', component: OrderManagementComponent},
   { path: 'contact', component : ContactComponent },
   { path:'auth', component: AuthComponent},
-
   { path: '', redirectTo: '/accueil', pathMatch: 'full'},
   { path:'createProduct', component: CreateProductFormComponent,canActivate:[StatutAdminService]}, // accessible uniquement si admin
-
 ];
 
 
@@ -65,14 +63,13 @@ const routes: Routes = [
     CategoryItemsComponent,
     CategoriesPreviewComponent,
     SearchComponent,
-    SearchBarComponent,
     OrderManagementComponent,
     ModifyProductComponent,
     ProductComponent,
     ContactComponent,
 //    ReactiveFormsModule
-    CreateProductFormComponent
-
+    CreateProductFormComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
