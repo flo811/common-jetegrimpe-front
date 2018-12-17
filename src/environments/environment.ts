@@ -4,7 +4,7 @@
 import { config } from './common';
 
 export const environment = Object.assign({
-  production: false,
+  production: true,
   baseUrl: 'http://localhost:8080/'
 }, config);
 

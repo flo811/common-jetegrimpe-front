@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from 'src/app/graphicalElements/services/product.service';
 import { Product } from 'src/app/model/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-management',
@@ -14,7 +15,7 @@ export class OrderManagementComponent implements OnInit {
   itemList: Product[];
   visible:boolean = false;
 
-  constructor(private pService:ProductService) {
+  constructor(private pService:ProductService, private router:Router) {
 
   }
 
@@ -28,4 +29,8 @@ export class OrderManagementComponent implements OnInit {
       .catch(err => console.log(err));
   }
 
+
+  goToCreateProd(){
+    this.router.navigate(['/createProduct']);
+  }
 }

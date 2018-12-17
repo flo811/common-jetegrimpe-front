@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductType } from 'src/app/model/productType';
-import {  HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
-import { Product } from 'src/app/model/product';
 // import { AuthService } from 'src/app/auth/auth.service';
 
 
@@ -11,12 +10,6 @@ import { Product } from 'src/app/model/product';
 //   category: ProductType; state: boolean; quantity: number
 // }
 
-
-
-class CreateProdForm {
-  name: string; photo: string; description: string; price: number;
-  category: ProductType; state: boolean; quantity: number
-}
 
 @Component({
   selector: 'app-create-product-form',
@@ -30,12 +23,14 @@ export class CreateProductFormComponent implements OnInit {
   photo: string;
   description: string;
   price: number;
-  category: ProductType;
+  category: string;
   state: boolean; 
   quantity: number
 
-  statusRequete:[number, string];
+  statusRequete:string;
   minValue: number = 0;
+
+  categories:string[]=Object.values(ProductType);
 
   // constructor(private _authService:AuthService) { }
   constructor(private _productService:ProductService) { }
@@ -58,7 +53,7 @@ export class CreateProductFormComponent implements OnInit {
       "photo": this.photo,
       "description": this.description,
       "price": this.price,
-      "category": this.category.toString,
+      "category": this.category,
       "state": this.state,
       "quantity": this.quantity
 }
@@ -67,23 +62,7 @@ export class CreateProductFormComponent implements OnInit {
     
     this._productService.addProducts(newProduct)
     
-    
-
-    .then((response:any) => {
-                                          let stringResult:string =`Status : ${response.status} body : ${response.body}`;
-                                          console.log(stringResult);
-                                          console.log(response.body);
-                                          if((response.status >= 300)){
-                                            this.statusRequete = [1,stringResult];
-                                          }else{
-                                            this.statusRequete = [2,stringResult];
-                                          }
-                                        })
-    .catch((err:HttpErrorResponse) => {
-      console.log(err);
-                    let stringResult:string = `${err.message}`;
-                    console.log(stringResult);
-                    this.statusRequete = [0,stringResult]
-                  })
+    .then((response:any) => {this.statusRequete = response.message;})
+    .catch((err:HttpErrorResponse) => {this.statusRequete = `Requête échouée : ${err.error.message}`;})
   }
 }
