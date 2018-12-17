@@ -66,13 +66,10 @@ const routes: Routes = [
     CategoriesPreviewComponent,
     SearchComponent,
     SearchBarComponent,
-<<<<<<< HEAD
-=======
     OrderManagementComponent,
     ModifyProductComponent,
     ProductComponent,
-    ContactComponent
->>>>>>> chloe
+    ContactComponent,
 //    ReactiveFormsModule
     CreateProductFormComponent
 

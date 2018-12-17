@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormInput } from '../account-create/model';
-import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
