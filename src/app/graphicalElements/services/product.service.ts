@@ -11,6 +11,10 @@ export class ProductService {
 
   constructor(private _http: HttpClient) { }
 
+  getByName(name: string): Promise<Product> {
+    return <Promise<Product>>this._http.get(environment.baseUrl.concat("product/" + name)).toPromise()
+  }
+
   getProducts(type: string, itemNumber: number): Promise<Product[]> {
     return <Promise<Product[]>>this._http.get(environment.baseUrl.concat("product/few?type=" + type + "&number=" + itemNumber)).toPromise()
   }

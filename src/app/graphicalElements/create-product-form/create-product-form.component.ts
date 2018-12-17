@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductType } from 'src/app/model/productType';
-import { HttpClient } from '@angular/common/http';
-// import { AuthService } from 'src/app/auth/auth.service';
 
-
-class CreateProdForm {  name: string; photo: string; description: string; price: number;
-  category: ProductType; state: boolean; quantity: number }
-
-  
-
+class CreateProdForm {
+  name: string; photo: string; description: string; price: number;
+  category: ProductType; state: boolean; quantity: number
+}
 
 @Component({
   selector: 'app-create-product-form',
@@ -17,7 +13,7 @@ class CreateProdForm {  name: string; photo: string; description: string; price:
 })
 export class CreateProductFormComponent implements OnInit {
 
-  createProdForm:CreateProdForm = new CreateProdForm();
+  createProdForm: CreateProdForm = new CreateProdForm();
 
   // constructor(private _authService:AuthService) { }
   constructor() { }
@@ -26,10 +22,6 @@ export class CreateProductFormComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.createProdForm);
-
-
-
+    console.log(this.createProdForm)
   }
-
 }

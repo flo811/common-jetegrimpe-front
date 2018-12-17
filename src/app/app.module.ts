@@ -29,6 +29,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CreateProductFormComponent } from './graphicalElements/create-product-form/create-product-form.component';
 import { StatutAdminService } from './auth/statut-admin.service';
 import { SearchComponent } from './pages/search/search.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'auth', component: AuthComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'detail/:name', component: ProductDetailComponent },
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'createProduct', component: CreateProductFormComponent, canActivate: [StatutAdminService] }, // accessible uniquement si admin
 
@@ -58,8 +60,8 @@ const routes: Routes = [
     CategoriesPreviewComponent,
     SearchComponent,
     //    ReactiveFormsModule
-    CreateProductFormComponent
-
+    CreateProductFormComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

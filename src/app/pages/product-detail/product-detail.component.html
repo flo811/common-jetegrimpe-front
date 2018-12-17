@@ -1,16 +1,14 @@
 <div>
-  <div class="col-sm-3 productItem">
+  <div>
     <img src={{product.photo}} alt="product picture" />
     <div>
       <p>{{product.name}}</p>
+      <p>{{product.description}}</p>
       <p>Prix : {{product.price}}</p>
-      <p>Quantité restante : {{product.quantity}}</p>
-    </div>
-    <div class="elementCache">
-      <a href="detail/{{product.name}}">{{product.description}}</a>
+      <p [hidden]=quantityInvisible>Il n'en rest que : {{product.quantity}} à grimper !</p>
     </div>
   </div>
   <div>
     <app-ajouter-panier></app-ajouter-panier>
   </div>
-</div>
+</div>>
