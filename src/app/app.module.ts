@@ -30,12 +30,19 @@ import { CreateProductFormComponent } from './graphicalElements/create-product-f
 import { StatutAdminService } from './auth/statut-admin.service';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchBarComponent } from './graphicalElements/search-bar/search-bar.component';
+import { OrderManagementComponent } from './pages/order-management/order-management.component';
+import { ModifyProductComponent } from './graphicalElements/modify-product/modify-product.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 const routes: Routes = [
 
   {path: 'accueil', component: HomeComponent},
+  { path: 'produits', component: ProductComponent},
   { path:'tech', component: TechComponent, canActivate:[StatutConnecteService]}, // /tech accessible uniquement si connecté
+  { path: 'gestion-des-produits', component: OrderManagementComponent},
+  { path: 'contact', component : ContactComponent },
   { path:'auth', component: AuthComponent},
 
   { path: '', redirectTo: '/accueil', pathMatch: 'full'},
@@ -59,6 +66,13 @@ const routes: Routes = [
     CategoriesPreviewComponent,
     SearchComponent,
     SearchBarComponent,
+<<<<<<< HEAD
+=======
+    OrderManagementComponent,
+    ModifyProductComponent,
+    ProductComponent,
+    ContactComponent
+>>>>>>> chloe
 //    ReactiveFormsModule
     CreateProductFormComponent
 

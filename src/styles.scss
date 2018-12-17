@@ -9,38 +9,37 @@
 
 
 
-    
-    
+   
     /********************************************************************* MENU *****************************************************************/
     nav{
     /*background-color: #02C39A;*/
+    margin: 0; 
     color: #02C39A;
-    padding: 10px 0;
+    padding: 20px 0;
     width: 100%;
     font-weight: 400;
     font-size: 17px;
 }
 
-  
-    #menu{
+    
+
+#menu{
     display: flex;
     width: 100%;
-    }
-    
-    #menu ul {
+}
 
-        list-style: none;
-        display: flex;
-        margin-bottom: 0;
-        align-items: center;
-        padding-left: 0;
+   
+#menu ul {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    padding-left: 0;
 }
 
 
 
-    
-    .menuGauche{
-
+.menuGauche{
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -49,7 +48,7 @@
 
 
     
-    .menuDroite{
+.menuDroite{
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -57,12 +56,11 @@
 }
 
 #menu a{
-    padding: 5px 10px;
+    padding: 25px 10px;
     color: #02C39A;
 }
-
-  
-    ul.sousMenu{
+    
+ul.sousMenu{
     position: absolute;
     flex-direction: column;
     opacity: 0;
@@ -74,9 +72,13 @@
 
 ul.sousMenu a{
     color: white !important;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
+ul.sousMenu a{
+    color: white !important;
+      margin-top: 5px;
+}
 
 /*
 .active-link{
@@ -91,9 +93,7 @@ ul.sousMenu a{
 }
 
 
-/********************************************************************* SLIDER ************************************************************************/
 
-    
     
     /********************************************************************* SLIDER ************************************************************************/
     #slider{
@@ -106,7 +106,7 @@ ul.sousMenu a{
 
 
     
-    #slider app-menu{
+#slider app-menu{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -119,14 +119,8 @@ ul.sousMenu a{
     align-items: center;
 }
 
+.entete p {
 
-    #slider .entete{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .entete p {
     font-weight: 700;
     color: white;
     font-size: 50px;
@@ -156,7 +150,7 @@ mdb-card-header.white-text.card-header{
 
 /*************************************************************************** AUTHENTIFICATION **********************************************************************/
 @media screen and (min-width: 1280px){
-    #authentification{
+    #form{
         width: 100%;
         margin: auto;
         display: flex; 
@@ -170,8 +164,12 @@ mdb-card-header.white-text.card-header{
     background-color: #02C39A;
 }
 
-#authentification .btn {
+#form .btn {
     background-color: #05668D;
+}
+
+#form mdb-card.animated.zoomIn.card{
+    width: 50%;
 }
 
 .ajoutUser{
@@ -203,8 +201,6 @@ mdb-card-header.white-text.card-header{
 .rowCategorie{
     padding: 50px 0;
 }
-    
-    /*************************************************************************** RESPONSIVE **********************************************************************/
 
 /*************************************************************************** RESPONSIVE **********************************************************************/
 @media screen and (min-width: 1280px) {
@@ -214,3 +210,59 @@ mdb-card-header.white-text.card-header{
         margin: auto;
     }
 }
+
+
+/************************************************************************ FORMULAIRE *****************************************************************/
+app-order-management #form{
+    flex-direction: column;
+}
+
+/*
+app-order-management .md-form{
+    width: 50%;
+}
+  */  
+
+
+/**************************************************************************** PAGE PRODUIT ****************************************************/
+#rowProduit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+#rowProduit svg{
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 15px;
+    fill: white;
+}
+
+.blocProduit:nth-child(1), .blocProduit:nth-child(3){
+    background-color: #02C39A;
+}
+
+.blocProduit:nth-child(2), .blocProduit:nth-child(4){
+    background-color: #05668D;
+}
+
+.blocProduit p{
+    margin-bottom: 0;
+}
+
+.blocProduit{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    margin: 0 1%;
+    cursor: pointer;
+    width: 15%;
+}
+
+
+    /*************************************************************************** RESPONSIVE **********************************************************************/

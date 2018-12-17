@@ -1,0 +1,70 @@
+<div id="form">
+  <mdb-card class="animated zoomIn">
+    <mdb-card-header class="white-text">
+      <h4 class="text-center">Mdofiier un produit</h4>
+    </mdb-card-header>
+    <mdb-card-body>
+
+      <form>
+        <div class="md-form">
+          <i class="fa fa-search prefix grey-text"></i>
+          <input [(ngModel)]="search" type="search" [validateSuccess]="false" data-error="Pour modifier un produit, sélectionner d'abord le produit" id="defaultForm-search" class="form-control" name="search" mdbInputDirective #champ1="ngModel" required>
+          <label for="defaultForm-search">Rechercher un produit</label>
+        </div>
+
+
+        <div id="champsCache" *ngIf="champ1.valid">
+        <div class="md-form">
+          <i class="fa fa-tag prefix grey-text"></i>
+          <input type="text" [validateSuccess]="false" data-error="Un nom de produit est requis" id="defaultForm-pass" class="form-control" name="name" mdbInputDirective [(ngModel)]="product.name" required>
+          <label for="defaultForm-pass">Nom du produit</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-camera prefix grey-text"></i>
+          <input type="text" id="defaultForm-pass" [validateSuccess]="false"  data-error="La photo du produit est requise" name="photo" class="form-control" mdbInputDirective [(ngModel)]="product.photo" required>
+          <label for="defaultForm-pass">Url de la photo</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-info-circle prefix grey-text"></i>
+          <input type="text" id="defaultForm-pass" [validateSuccess]="false"  data-error="La description du produit est requise" name="description" class="form-control" mdbInputDirective [(ngModel)]="product.description" required>
+          <label for="defaultForm-pass">Description</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-eur prefix grey-text"></i>
+          <input type="number" id="defaultForm-pass" [validateSuccess]="false"  data-error="Le prix du produit est requis" name="price" class="form-control" mdbInputDirective [(ngModel)]="product.price" required>
+          <label for="defaultForm-pass">Prix</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-tag prefix grey-text"></i>
+          <input type="text" id="defaultForm-pass" [validateSuccess]="false"  data-error="La catégorie du produit est requise" name="catgeory" class="form-control" mdbInputDirective [(ngModel)]="product.catgeory" required>
+          <label for="defaultForm-pass">Catégorie</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-eur prefix grey-text"></i>
+          <input type="text" id="defaultForm-pass" [validateSuccess]="false"  data-error="L'état du produit est requis" name="state" class="form-control" mdbInputDirective [(ngModel)]="product.state" required>
+          <label for="defaultForm-pass">Etat</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-eur prefix grey-text"></i>
+          <input type="number" id="defaultForm-pass" [validateSuccess]="false"  data-error="La quantité du produit est requise" name="quantity" class="form-control" mdbInputDirective [(ngModel)]="product.quantity" required>
+          <label for="defaultForm-pass">Quantité</label>
+        </div>
+      </div>
+
+
+        <div class="text-center">
+          <input type="submit" mdbBtn class="waves-light btn" mdbWavesEffect value="Valider les modifications" (click)="modifyProduct()">
+        </div>
+        <div *ngIf="err" class="text-danger">
+          Oops, les informations saisies ne permettent pas de vous authentifier.
+        </div>
+      </form>
+    </mdb-card-body>
+  </mdb-card>
+</div>
