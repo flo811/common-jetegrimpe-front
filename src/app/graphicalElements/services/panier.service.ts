@@ -33,8 +33,12 @@ export class PanierService {
 
   removeItem(product: Product) {
     let nbr: number = this.panier.articles.get(product)
-    nbr == 1 ? this.panier.articles.delete(product) : this.panier.articles.set(product, nbr - 1)
+    nbr == 1 ? this.deleteItem(product) : this.panier.articles.set(product, nbr - 1)
     this.saveToLocaltorage()
+  }
+
+  deleteItem(product: Product) {
+    this.panier.articles.delete(product);
   }
 
   removeAll() {

@@ -24,6 +24,12 @@ export class PanierDisplayComponent implements OnInit {
     this.actualize()
   }
 
+  
+  subtractEvery(product: Product) {
+    this._panierService.deleteItem(product);
+    this.actualize()
+  }
+
   actualize() { this.panierList = this._panierService.getPanier().articles.entries() }
 
   ngOnInit() {
