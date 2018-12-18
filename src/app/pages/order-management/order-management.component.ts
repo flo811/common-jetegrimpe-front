@@ -30,7 +30,7 @@ export class OrderManagementComponent implements OnInit {
   }
 
 
-  goToCreateProd(){
-    this.router.navigate(['/createProduct']);
+  goToPage(page:string){
+    this.router.navigate([page]);
   }
 }
