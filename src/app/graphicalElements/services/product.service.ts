@@ -32,6 +32,12 @@ export class ProductService {
       .then((response: HttpResponse<any>) => response);
   }
 
+  deleteProductByName(name:string):Promise<HttpResponse<any>>{
+    console.log(`Envoie de la requête de suppression du produit : ${name}`);
+    return this._http.delete(environment.baseUrl.concat(`product/${name}`))
+                          .toPromise()
+                          .then((response: HttpResponse<any>) => response);
+  }
 
   // Patch method to modify a product
   modifyProduct(product: Product): Promise<Product> {
