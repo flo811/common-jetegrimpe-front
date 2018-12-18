@@ -11,6 +11,19 @@
 
    
     /********************************************************************* MENU *****************************************************************/
+app-menu svg{
+    max-width: 25%;
+    height: auto;
+}
+
+app-menu .container{
+    max-width: 100%;
+}
+
+.navbar{
+    background-color: #05668D;
+}
+
     nav{
     /*background-color: #02C39A;*/
     margin: 0; 
@@ -21,7 +34,9 @@
     font-size: 17px;
 }
 
-    
+.fa-shopping-cart{
+    font-size: 30px;
+}   
 
 #menu{
     display: flex;
@@ -97,7 +112,7 @@ ul.sousMenu a{
     
     /********************************************************************* SLIDER ************************************************************************/
     #slider{
-    background: url(https://images.pexels.com/photos/303040/pexels-photo-303040.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background: url(http://coresites-cdn.factorymedia.com/mpora_new/wp-content/uploads/2016/09/tny-7.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -202,6 +217,11 @@ mdb-card-header.white-text.card-header{
     padding: 50px 0;
 }
 
+
+mdb-card{
+    width: 23%; margin: 1%;
+}
+
 /*************************************************************************** RESPONSIVE **********************************************************************/
 @media screen and (min-width: 1280px) {
     #authentification{
@@ -262,6 +282,49 @@ app-order-management .md-form{
     margin: 0 1%;
     cursor: pointer;
     width: 15%;
+}
+
+
+/**************************************************************************** FOOTER *****************************************************************************/
+#footerDisplay{
+    padding: 25px 0px;
+    background-color: #02C39A;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    text-align:center;
+}
+
+#footerDisplay .entete{
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.socialMedia{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.socialMedia i{
+    font-size: 45px; 
+    color: white; 
+    cursor: pointer;
+}
+
+#copyright{
+    color: white;
+    background-color: #02C39A;
+    border-top: 1px solid white;
+    text-align: center;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+#copyright p{
+    margin-bottom: 0;
 }
 
 

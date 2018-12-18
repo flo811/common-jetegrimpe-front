@@ -35,6 +35,11 @@ import { ProductComponent } from './pages/product/product.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { PanierDisplayComponent } from './pages/panier-display/panier-display.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { ChaussonsComponent } from './pages/chaussons/chaussons.component';
+import { BaudriersComponent } from './pages/baudriers/baudriers.component';
+import { SystemeAssurageComponent } from './pages/systeme-assurage/systeme-assurage.component';
+import { AccessoiresComponent } from './pages/accessoires/accessoires.component';
 
 const routes: Routes = [
 
@@ -43,6 +48,10 @@ const routes: Routes = [
   { path: 'accueil', component: HomeComponent },
   { path: 'detail/:name', component: ProductDetailComponent },
   { path: 'produits', component: SearchComponent },
+  { path: 'chaussons', component: ChaussonsComponent},
+  { path: 'baudriers', component: BaudriersComponent},
+  { path: 'systeme-assurage', component: SystemeAssurageComponent},
+  { path: 'accessoires', component: AccessoiresComponent},
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'gestion-des-produits', component: OrderManagementComponent },
   { path: 'contact', component: ContactComponent },
@@ -72,7 +81,12 @@ const routes: Routes = [
     //    ReactiveFormsModule
     CreateProductFormComponent,
     ProductDetailComponent,
-    PanierDisplayComponent
+    PanierDisplayComponent,
+    FooterComponent,
+    ChaussonsComponent,
+    BaudriersComponent,
+    SystemeAssurageComponent,
+    AccessoiresComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,15 @@
  */
 export class Collegue {
   
-  nom:string;
-  prenom:string;
+  name:string;
+  firstName:string;
   email:string;
-  motDePasse:string;
+  password:string;
   roles:string[];
+
+  adress:string;
+  phone:number;
+  birthDate:string;
 
   constructor(params:any) {
     Object.assign(this, params);
