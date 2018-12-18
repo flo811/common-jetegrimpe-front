@@ -1,16 +1,28 @@
-<div>
-  <div class="col-sm-3 productItem">
-    <img src={{product.photo}} alt="product picture" />
-    <div>
-      <p>{{product.name}}</p>
-      <p>Prix : {{product.price}}</p>
-      <p>Quantité restante : {{product.quantity}}</p>
+<!-- Card -->
+<mdb-card>
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src={{product.photo}} alt="product picture"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
     </div>
-    <div class="elementCache">
-      <a href="detail/{{product.name}}">{{product.description}}</a>
-    </div>
-  </div>
-  <div>
-    <button (click)="addToPanier()">Grimper au panier</button>
-  </div>
-</div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>{{product.name}}</h4>
+      </mdb-card-title>
+  
+      <!--Text-->
+      <mdb-card-text> 
+        <p>{{product.price}}</p>
+        <p>{{product.quantity}}</p>
+        <p>{{product.description}}</p>
+      </mdb-card-text>
+  
+      <a mdbBtn color="primary" mdbWavesEffect (click)="addToPanier()">Grimper au panier</a>
+      <a routerLink="detail/{{product.name}}" mdbBtn color="primary" mdbWavesEffect>Détails</a>
+    </mdb-card-body>
+</mdb-card>
+  <!-- Card -->
