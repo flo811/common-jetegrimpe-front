@@ -1,6 +1,6 @@
 <div *ngFor="let item of panierList">
   <p>{{item[0].name}}</p>
-  <p>{{item[0].photo}}</p>
+  <img src={{item[0].photo}}>
   <p>Prix unitaire : {{item[0].price}}</p>
   <p>Quantité sélectionnée : {{item[1]}}</p>
   <button (click)="addOne(item[0])">+</button>
