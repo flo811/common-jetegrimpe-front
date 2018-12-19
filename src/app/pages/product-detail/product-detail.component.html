@@ -4,11 +4,12 @@
     <div>
       <p>{{product.name}}</p>
       <p>{{product.description}}</p>
-      <p>Prix : {{product.price}}</p>
-      <p [hidden]=quantityInvisible>Il n'en reste que : {{product.quantity}} à grimper !</p>
+      <p>Prix : {{product.price}}€</p>
+      <p [hidden]="!isLessThan10()">Il n'en reste que : {{product.quantity}} à grimper !</p>
     </div>
   </div>
   <div>
-    <button (click)="addToPanier()">Grimper au panier</button>
+    <button [disabled]="!isAvailable()" (click)="addToPanier()">Grimper au panier</button>
+    <p [hidden]="isAvailable()">Il n'en reste plus !</p>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductType } from 'src/app/model/productType';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/graphicalElements/services/product.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -25,7 +26,11 @@ export class SearchComponent implements OnInit {
 
   resultList: Product[]
 
-  constructor(private _productService: ProductService) { }
+  constructor(private _route: ActivatedRoute, private _productService: ProductService) { }
+
+  getPageType(): string { return this._route.snapshot.paramMap.get("type") }
+
+  isAllPage(): boolean { return this.getPageType() == "tout" }
 
   search() {
     this._productService.getResultNbr(this.name, this.category, this.priceMin, this.priceMax)
