@@ -5,17 +5,25 @@
       </mdb-card-header>
       <mdb-card-body>
 
+
+
   
-        <form>
+        <form (ngSubmit)="submit()" #localForm="ngForm">
           <div>
             
           </div>
             <p>{{collegue.name}}</p>
+            <p>{{collegue.firstName}}</p>
+            <p>{{collegue.birthDate}}</p>
+            <p>{{collegue.phone}}</p>
+            <p>{{collegue.email}}</p>
+            <p>{{collegue.adress}}</p>
+            <p>{{collegue.password}}</p>
 
   
   
           <div class="text-center">
-            <input type="submit" mdbBtn class="waves-light btn" mdbWavesEffect value="Valider les modifications" (click)="modifyPerson()">
+            <input type="submit" mdbBtn class="waves-light btn" mdbWavesEffect value="Modifier votre profil">
           </div>
           <div *ngIf="err" class="text-danger">
             Oops, les informations saisies ne permettent pas de vous authentifier.

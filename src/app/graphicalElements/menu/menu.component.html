@@ -27,22 +27,24 @@
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
                 Produits<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/produits/tout">Tous</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/produits/Tout">Tous</a>
                     <div class="divider dropdown-divider"></div>
 
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/chaussons" routerLinkActive="active-link">Chaussons</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/baudriers" routerLinkActive="active-link">Baudriers</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/systeme-assurage" routerLinkActive="active-link">Système d'assurage</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/accessoires" routerLinkActive="active-link">Accessoires</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/Chaussons" routerLinkActive="active-link">Chaussons</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/Baudrier" routerLinkActive="active-link">Baudriers</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/Assurage" routerLinkActive="active-link">Système d'assurage</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="produits/Accessoire" routerLinkActive="active-link">Accessoires</a>
                 </div>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect routerLink="/gestion-des-produits" routerLinkActive="active-link">Gestion des produits</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link waves-light" mdbWavesEffect routerLink="" routerLinkActive="active-link">Gestion des commandes</a>
-            </li>
+            <div *ngIf="StatutAdminService">
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect routerLink="/gestion-des-produits" routerLinkActive="active-link">Gestion des produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect routerLink="" routerLinkActive="active-link">Gestion des commandes</a>
+                </li>
+            </div>
             <li class="nav-item">
                 <a class="nav-link waves-light" mdbWavesEffect routerLink="/contact" routerLinkActive="active-link">Contact</a>
             </li>
@@ -60,7 +62,7 @@
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
                 Mon profil<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/profil" routerLinkActive="active-link">Voir profil</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/utilisateur/profil" routerLinkActive="active-link">Voir profil</a>
                     <div class="divider dropdown-divider"></div>
                     <a class="dropdown-item waves-light" mdbWavesEffect routerLink="" routerLinkActive="active-link">Mes commandes</a>
                 </div>
