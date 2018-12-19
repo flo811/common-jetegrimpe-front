@@ -1,1 +1,1 @@
-export enum ProductType { Chausson = "Chausson", Baudrier = "Baudrier", Assurage = "Assurage", Accessoire = "Accessoire" }
+export enum ProductType { Chausson = "Chaussons", Baudrier = "Baudrier", Assurage = "Assurage", Accessoire = "Accessoire" }
