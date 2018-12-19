@@ -11,9 +11,4 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  if(){
-    
-  }
-
 }

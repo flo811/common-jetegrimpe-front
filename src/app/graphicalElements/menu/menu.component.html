@@ -51,30 +51,22 @@
         </ul>
         <!-- Links -->
 
-<!-- Search form -->
-        <form class="form-inline waves-light" mdbWavesEffect>
-            <!-- <div class="md-form mt-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/panier" routerLinkActive="active-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 
-            </div> -->
-
-            <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                            <a class="nav-link waves-light" mdbWavesEffect routerLink="/panier" routerLinkActive="active-link"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                    </li>
-            <li class="nav-item dropdown" dropdown>
+        <ul class="navbar-nav mr-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-light" mdbWavesEffect routerLink="/auth" routerLinkActive="active-link">Connexion</a>
+                </li>
+                <li class="nav-item dropdown" dropdown>
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                connexion<span class="caret"></span></a>
+                Mon profil<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/produits">Mon profil</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/profil" routerLinkActive="active-link">Voir profil</a>
                     <div class="divider dropdown-divider"></div>
-
                     <a class="dropdown-item waves-light" mdbWavesEffect routerLink="" routerLinkActive="active-link">Mes commandes</a>
-
                 </div>
             </li>
           </ul>
-        </form>
     </links>
     <!-- Collapsible content -->
 

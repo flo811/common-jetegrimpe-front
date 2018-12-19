@@ -37,11 +37,12 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { PanierDisplayComponent } from './pages/panier-display/panier-display.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
+import { ProfilComponent } from './pages/profil/profil.component';
 
 const routes: Routes = [
 
   
-  { path: 'creer-compte', component: AccountCreateComponent },
+  { path: 'utilisateur/creer-compte', component: AccountCreateComponent },
   { path: 'accueil', component: HomeComponent },
   { path: 'detail/:name', component: ProductDetailComponent },
   { path: 'produits', component: SearchComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'produits/accessoires', component: CategoriesComponent},
   { path: 'produits/systeme-assurage', component: CategoriesComponent},
   { path: 'produits/baudriers', component: CategoriesComponent},
+  { path: 'profil', component: ProfilComponent},
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'gestion-des-produits', component: OrderManagementComponent },
   { path: 'contact', component: ContactComponent },
@@ -80,7 +82,8 @@ const routes: Routes = [
     ProductDetailComponent,
     PanierDisplayComponent,
     FooterComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
