@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { Subject } from 'rxjs';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -15,7 +14,6 @@ export class ProductService {
 
   constructor(private _http: HttpClient) { }
 
-  //Ne pas utiliser
   getByName(name: string): Promise<Product> {
     return <Promise<Product>>this._http.get(environment.baseUrl.concat("product/" + name)).toPromise()
   }
@@ -32,11 +30,11 @@ export class ProductService {
       .then((response: HttpResponse<any>) => response);
   }
 
-  deleteProductByName(name:string):Promise<HttpResponse<any>>{
+  deleteProductByName(name: string): Promise<HttpResponse<any>> {
     console.log(`Envoie de la requête de suppression du produit : ${name}`);
     return this._http.delete(environment.baseUrl.concat(`product/${name}`))
-                          .toPromise()
-                          .then((response: HttpResponse<any>) => response);
+      .toPromise()
+      .then((response: HttpResponse<any>) => response);
   }
 
   // Patch method to modify a product

@@ -20,7 +20,7 @@ export class CategoryItemsComponent implements OnInit {
 
   ngOnInit() {
     this._prodService.getProducts(this.type, this.NUMBER_OF_ITEMS)
-      .then(productList => { this.itemList = productList; console.log(this.itemList) })
+      .then(productList => { this.itemList = productList })
       .catch(err => console.log(err))
   }
 }

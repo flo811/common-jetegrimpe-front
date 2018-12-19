@@ -19,10 +19,12 @@
         <p>{{product.price}}</p>
         <p>{{product.quantity}}</p>
         <p>{{product.description}}</p>
+        <p [hidden]="!isLessThan10()">Il n'en reste que : {{product.quantity}} à grimper !</p>
       </mdb-card-text>
   
-      <a mdbBtn color="primary" mdbWavesEffect (click)="addToPanier()">Grimper au panier</a>
-      <a routerLink="detail/{{product.name}}" mdbBtn color="primary" mdbWavesEffect>Détails</a>
+      <button [disabled]="!isAvailable()" mdbBtn color="primary" mdbWavesEffect (click)="addToPanier()">Grimper au panier</button>
+      <a href="detail/{{product.name}}" mdbBtn color="primary" mdbWavesEffect>Détails</a>
+      <p [hidden]="isAvailable()">Il n'en reste plus !</p>
     </mdb-card-body>
 </mdb-card>
   <!-- Card -->

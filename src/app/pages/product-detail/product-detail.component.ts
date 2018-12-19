@@ -14,16 +14,21 @@ import { PanierService } from 'src/app/graphicalElements/services/panier.service
 export class ProductDetailComponent implements OnInit {
 
   product: Product = new Product("", "", "", 0, ProductType.Accessoire, true, 0)
-  quantityInvisible: boolean = true
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private _panierService: PanierService) {
-    this.productService.getByName(route.snapshot.paramMap.get("name"))
+    this.productService.getByName(this.route.snapshot.paramMap.get("name"))
       .then(product => this.product = product)
-      .then(() => this.quantityInvisible = this.product.quantity > 10)
       .catch(err => console.log(err))
   }
 
-  addToPanier() { this._panierService.addToPanier(this.product) }
+  isLessThan10(): boolean { return this.product.quantity < 10 }
+
+  isAvailable(): boolean { return this.product.quantity > 0 }
+
+  addToPanier() {
+    this._panierService.addToPanier(this.product)
+    this.product.quantity -= 1
+  }
 
   ngOnInit() {
   }

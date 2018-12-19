@@ -14,7 +14,14 @@ export class ProductItemComponent implements OnInit {
 
   constructor(private _panierService: PanierService) { }
 
-  addToPanier() { this._panierService.addToPanier(this.product) }
+  isLessThan10(): boolean { return this.product.quantity < 10 }
+
+  isAvailable(): boolean { return this.product.quantity > 0 }
+
+  addToPanier() {
+    this._panierService.addToPanier(this.product)
+    this.product.quantity -= 1
+  }
 
   ngOnInit() {
   }
