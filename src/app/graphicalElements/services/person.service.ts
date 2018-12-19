@@ -1,0 +1,15 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PersonService {
+
+  constructor(private _http:HttpClient) { }
+
+  addPerson(name:string, firstName:string, adress:string, phone:number, email:string, birthDate:string, password:string):Promise<any>{
+    return this._http.post(environment.baseUrl + "utilisateur/creer-compte", {name, firstName, adress, phone, email, birthDate, password}).toPromise()
+  }
+}

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AccountCreateService } from '../graphicalElements/services/account-create.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Collegue } from '../auth/auth.domains';
+import { PersonService } from '../graphicalElements/services/person.service';
 
 @Component({
   selector: 'app-account-create',
@@ -12,7 +12,7 @@ import { Collegue } from '../auth/auth.domains';
 export class AccountCreateComponent implements OnInit {
 
   collegue:Collegue = new Collegue({});
-  
+
   name: string;
   firstName: string;
   adress: string;
@@ -24,15 +24,14 @@ export class AccountCreateComponent implements OnInit {
 
   response:string;
 
-  constructor(private acService: AccountCreateService, private _router:Router) { }
+  constructor(private pService: PersonService, private _router:Router) { }
 
   submit() {
-    this.acService.addPerson(this.collegue.name, this.collegue.firstName, this.collegue.adress, this.collegue.phone, this.collegue.email, this.collegue.birthDate, this.collegue.password)
-                      // en cas de succès
-                      .then((message:any) => {console.log(`${message.message}`); return this._router.navigate[('accueil')]})
-                      // en cas d'erreur
-                      .catch(err => {console.log(`${err.message}`); return this.response = "echec"})
-  }
+    this.pService.addPerson(this.name, this.firstName, this.adress, this.phone, this.email, this.birthDate, this.password)
+                      .then((response:any) => {console.log("MARCHE !!!", response.message);return this._router.navigate(['/accueil']);})
+                      .catch(err => {console.log(`${err.message}`); return this.response = `echec: ${err.message}`})
+}
+
 
   ngOnInit() {
   }

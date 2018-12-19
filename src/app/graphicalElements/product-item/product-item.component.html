@@ -25,6 +25,12 @@
       <button [disabled]="!isAvailable()" mdbBtn color="primary" mdbWavesEffect (click)="addToPanier()">Grimper au panier</button>
       <a href="detail/{{product.name}}" mdbBtn color="primary" mdbWavesEffect>Détails</a>
       <p [hidden]="isAvailable()">Il n'en reste plus !</p>
+
+      <div class="">
+          <button mdbBtn color="primary" mdbWavesEffect (click)="modifyProduct()">Modifier</button>
+          <button mdbBtn color="primary" mdbWavesEffect>Supprimer</button>
+      </div>
+
     </mdb-card-body>
 </mdb-card>
   <!-- Card -->
