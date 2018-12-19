@@ -21,8 +21,15 @@
         <p>{{product.description}}</p>
       </mdb-card-text>
   
-      <a mdbBtn color="primary" mdbWavesEffect (click)="addToPanier()">Grimper au panier</a>
-      <a routerLink="detail/{{product.name}}" mdbBtn color="primary" mdbWavesEffect>Détails</a>
+      <div class="">
+          <button mdbBtn color="primary" mdbWavesEffect (click)="addToPanier()">Grimper au panier</button>
+          <a routerLink="detail/{{product.name}}" mdbBtn color="primary" mdbWavesEffect>Détails</a>
+      </div>
+      <div class="">
+          <button mdbBtn color="primary" mdbWavesEffect (click)="modifyProduct()">Modifier</button>
+          <button mdbBtn color="primary" mdbWavesEffect>Supprimer</button>
+      </div>
+
     </mdb-card-body>
 </mdb-card>
   <!-- Card -->

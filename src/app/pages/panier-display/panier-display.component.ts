@@ -10,7 +10,7 @@ import { Product } from 'src/app/model/product';
 
 export class PanierDisplayComponent implements OnInit {
 
-  panierList: IterableIterator<[Product, number]>
+  panierList: Map<Product, number>
 
   constructor(private _panierService: PanierService) { this.actualize() }
 
@@ -24,7 +24,7 @@ export class PanierDisplayComponent implements OnInit {
     this.actualize()
   }
 
-  actualize() { this.panierList = this._panierService.getPanier().articles.entries() }
+  actualize() { this.panierList = this._panierService.getPanier().articles}
 
   ngOnInit() {
   }

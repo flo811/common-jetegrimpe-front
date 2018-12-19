@@ -36,10 +36,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { PanierDisplayComponent } from './pages/panier-display/panier-display.component';
 import { FooterComponent } from './pages/footer/footer.component';
-import { ChaussonsComponent } from './pages/chaussons/chaussons.component';
-import { BaudriersComponent } from './pages/baudriers/baudriers.component';
-import { SystemeAssurageComponent } from './pages/systeme-assurage/systeme-assurage.component';
-import { AccessoiresComponent } from './pages/accessoires/accessoires.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 
 const routes: Routes = [
 
@@ -48,10 +45,10 @@ const routes: Routes = [
   { path: 'accueil', component: HomeComponent },
   { path: 'detail/:name', component: ProductDetailComponent },
   { path: 'produits', component: SearchComponent },
-  { path: 'chaussons', component: ChaussonsComponent},
-  { path: 'baudriers', component: BaudriersComponent},
-  { path: 'systeme-assurage', component: SystemeAssurageComponent},
-  { path: 'accessoires', component: AccessoiresComponent},
+  { path: 'produits/chaussons', component: CategoriesComponent},
+  { path: 'produits/accessoires', component: CategoriesComponent},
+  { path: 'produits/systeme-assurage', component: CategoriesComponent},
+  { path: 'produits/baudriers', component: CategoriesComponent},
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'gestion-des-produits', component: OrderManagementComponent },
   { path: 'contact', component: ContactComponent },
@@ -83,10 +80,7 @@ const routes: Routes = [
     ProductDetailComponent,
     PanierDisplayComponent,
     FooterComponent,
-    ChaussonsComponent,
-    BaudriersComponent,
-    SystemeAssurageComponent,
-    AccessoiresComponent
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
