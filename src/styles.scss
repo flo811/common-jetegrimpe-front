@@ -7,12 +7,12 @@
     margin: 0; 
 }
 
-
+h1{margin-bottom: 50px;}
 
    
     /********************************************************************* MENU *****************************************************************/
 app-menu svg{
-    max-width: 25%;
+    max-width: 20%;
     height: auto;
 }
 
@@ -36,7 +36,14 @@ app-menu .container{
 
 .fa-shopping-cart{
     font-size: 30px;
+    color: white;
+    transition: .2s ease-in-out;
 }   
+.fa-shopping-cart:hover{
+    transition: .2s ease-in-out;
+    color: rgba(255,255,255,0.65);
+    transform: scale(0.95);
+}
 
 #menu{
     display: flex;
@@ -218,9 +225,9 @@ mdb-card-header.white-text.card-header{
 }
 
 
-mdb-card{
-    width: 23%; margin: 1%;
-}
+// mdb-card{
+//     width: 23%; margin: 1%;
+// }
 
 /*************************************************************************** RESPONSIVE **********************************************************************/
 @media screen and (min-width: 1280px) {
@@ -286,45 +293,14 @@ app-order-management .md-form{
 
 
 /**************************************************************************** FOOTER *****************************************************************************/
-#footerDisplay{
-    padding: 25px 0px;
+footer{
     background-color: #02C39A;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    color: white;
-    text-align:center;
 }
 
-#footerDisplay .entete{
-    text-transform: uppercase;
-    font-size: 20px;
-}
 
-.socialMedia{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.socialMedia i{
-    font-size: 45px; 
-    color: white; 
-    cursor: pointer;
-}
-
-#copyright{
-    color: white;
-    background-color: #02C39A;
-    border-top: 1px solid white;
-    text-align: center;
-    padding: 10px 15px;
-    width: 100%;
-}
-
-#copyright p{
-    margin-bottom: 0;
+/************************************************************************ PAGE PANIER ****************************************************************************/
+app-panier-display .container{
+    padding: 150px 0px;
 }
 
 
