@@ -1,5 +1,5 @@
 <!-- Pictos produits -->
-<div [hidden]="isAllPage()" id="rowProduit">
+<div [hidden]="!isAllPage()" id="rowProduit">
   <div class="blocProduit">
     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
       y="0px" width="503.169px" height="503.169px" viewBox="0 0 503.169 503.169" style="enable-background:new 0 0 503.169 503.169;"
@@ -125,7 +125,6 @@
   </div>
 </div>
 
-
 <div id="form">
   <div class="md-form">
     <i class="fa fa-search prefix grey-text"></i>
@@ -134,11 +133,11 @@
     <label for="defaultForm-search">Nom du produit</label>
   </div>
 
-  <div class="md-form">
+  <div [hidden]="!isAllPage()" class="md-form">
     <i class="fa fa-search prefix grey-text"></i>
     <select [(ngModel)]="category" type="search" [validateSuccess]="false" id="defaultForm-search" class="form-control"
       name="search" mdbInputDirective #champ1="ngModel" required>
-      <option value="tous" selected>Tous</option>
+      <option value="Tout" selected>Tout</option>
       <option *ngFor='let cat of types' [value]="cat"> {{cat}} </option>
     </select>
     <label for="defaultForm-search">Catégorie</label>
@@ -185,36 +184,3 @@
     <button (click)="setPage(page)">{{page}}</button>
   </div>
 </div>
-
-
-
-<!-- <div>
-  <input type="text" placeholder="Nom du produit" [(ngModel)]="name">
-  Catégorie
-  <select [(ngModel)]="category">
-    <option value="tous" selected>Tous</option>
-    <option *ngFor='let cat of types' [value]="cat">
-      {{cat}}
-    </option>
-  </select>
-  Prix min <input type="number" [(ngModel)]="priceMin">
-  Prix max <input type="number" [(ngModel)]="priceMax">
-  Trier par prix
-  <select [(ngModel)]="sort">
-    <option value="asc">Croissants</option>
-    <option value="desc">Décroissants</option>
-  </select>
-  <button (click)="search()">Chercher</button>
-</div>
-
-<div>
-  <div *ngFor="let element of resultList">
-    <app-product-item [product]="element"></app-product-item>
-  </div>
-</div>
-
-<div>
-  <div *ngFor='let page of pageNbrList'>
-    <button (click)="setPage(page)">{{page}}</button>
-  </div>
-</div> -->

@@ -13,8 +13,6 @@ export class AccountCreateService {
 
 
   addPerson(name:string, firstName:string, adress:string, phone:number, email:string, birthDate:string, password:string):Promise<any>{
-    console.log("Add person");
-    console.log({name, firstName, adress, phone, email, birthDate, password});
     return this._http.post(environment.baseUrl + "creer-compte", {name, firstName, adress, phone, email, birthDate, password})
                 .toPromise()
   }

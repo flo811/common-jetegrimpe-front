@@ -23,7 +23,6 @@ export class ProductService {
   }
 
   addProducts(newProduct: any): Promise<HttpResponse<any>> {
-    console.log(newProduct)
     return this._http.post(environment.baseUrl.concat('product'), newProduct,
       { headers: new HttpHeaders({ "Content-Type": "application/json" }) })
       .toPromise()
@@ -31,7 +30,6 @@ export class ProductService {
   }
 
   deleteProductByName(name: string): Promise<HttpResponse<any>> {
-    console.log(`Envoie de la requête de suppression du produit : ${name}`);
     return this._http.delete(environment.baseUrl.concat(`product/${name}`))
       .toPromise()
       .then((response: HttpResponse<any>) => response);

@@ -45,9 +45,6 @@ export class CreateProductFormComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.name, this.category);
-
-    
     let newProduct = {
       "name": this.name,
       "photo": this.photo,
