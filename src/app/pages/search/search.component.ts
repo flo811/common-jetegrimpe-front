@@ -60,4 +60,10 @@ export class SearchComponent implements OnInit {
   ngOnDestroy() {
     this.userSubscription.unsubscribe()
   }
+
+  
+  deleteFromTab(deletedProd:Product){
+    console.log(`${deletedProd.name} supprimé`)
+    this.resultList = this.resultList.filter(prod=> !(prod == deletedProd));
+  }
 }
