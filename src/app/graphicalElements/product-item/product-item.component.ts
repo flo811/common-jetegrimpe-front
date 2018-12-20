@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { PanierService } from '../services/panier.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-product-item',
@@ -15,7 +16,7 @@ export class ProductItemComponent implements OnInit {
 
   admin :boolean;
 
-  constructor(private _panierService: PanierService, private _authSrv:AuthService) { 
+  constructor(private _panierService: PanierService, private _authSrv:AuthService, private productSrv: ProductService) { 
 
     this._authSrv.collegueConnecteObs
     .subscribe(col => {this.admin = col.estConnuEtAdmin()});
@@ -31,5 +32,13 @@ export class ProductItemComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  deleteProduct(){
+
+    this.productSrv.deleteProductByName(this.product.name)
+                    .then(response => console.log(response.body))
+                    .catch(err => console.log(err.message)
+    
   }
 }
