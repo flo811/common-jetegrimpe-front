@@ -43,10 +43,13 @@ const routes: Routes = [
   { path: 'utilisateur/creer-compte', component: AccountCreateComponent },
   { path: 'accueil', component: HomeComponent },
   { path: 'detail/:name', component: ProductDetailComponent },
+
   { path: 'produits/:type', component: SearchComponent },
 
   // { path: 'produits', component: SearchComponent },
   { path: 'utilisateur/profil', component: ProfilComponent, canActivate: [StatutConnecteService]},
+
+  { path: 'produits/modifier/:name', component: ModifyProductComponent},
 
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'gestion-des-produits', component: OrderManagementComponent, canActivate: [StatutAdminService] },

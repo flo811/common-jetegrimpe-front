@@ -54,7 +54,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.userSubscription = this._route.params.subscribe(
-      () => { this.category = this.getPageType(); this.search() })
+      () => { this.category = this.getPageType(); this.search(); this.priceMin = undefined; this.priceMax = undefined })
   }
 
   ngOnDestroy() {

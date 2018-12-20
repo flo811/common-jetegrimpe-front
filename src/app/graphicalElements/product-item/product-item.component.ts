@@ -3,6 +3,8 @@ import { Product } from 'src/app/model/product';
 import { PanierService } from '../services/panier.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ProductService } from '../services/product.service';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-item',
@@ -18,7 +20,7 @@ export class ProductItemComponent implements OnInit {
 
   admin: boolean;
 
-  constructor(private _panierService: PanierService, private _authSrv: AuthService, private productSrv: ProductService) {
+  constructor(private _router: Router, private _panierService: PanierService, private _authSrv: AuthService, private productSrv: ProductService) {
 
     this._authSrv.collegueConnecteObs
       .subscribe(col => { this.admin = col.estConnuEtAdmin() });
@@ -31,6 +33,10 @@ export class ProductItemComponent implements OnInit {
   addToPanier() {
     this._panierService.addToPanier(this.product)
     this.product.quantity -= 1
+  }
+
+  modify() {
+    this._router.navigate(["produits/modifier/" + this.product.name])
   }
 
   ngOnInit() {

@@ -27,12 +27,13 @@
       <a href="detail/{{product.name}}" mdbBtn color="primary" mdbWavesEffect>Détails</a>
       <p [hidden]="isAvailable()">Il n'en reste plus !</p>
 
-      <div class="" *ngIf="admin">
-          <button mdbBtn color="warning" mdbWavesEffect (click)="modifyProduct()">Modifier</button>
+
+      <div *ngIf="admin">
+          <button mdbBtn color="warning" mdbWavesEffect (click)="modify()">Modifier</button>
           <button mdbBtn color="danger" mdbWavesEffect (click)="deleteProduct()">Supprimer</button>
       </div>
 
     </mdb-card-body>
   </div>
 </mdb-card>
-  <!-- Card -->
+<!-- Card -->
