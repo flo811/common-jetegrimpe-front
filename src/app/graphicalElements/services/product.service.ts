@@ -36,8 +36,8 @@ export class ProductService {
   }
 
   // Patch method to modify a product
-  modifyProduct(product: Product): Promise<Product> {
-    return <Promise<Product>>this._http.patch(environment.baseUrl + "productModif/" + name, product).toPromise()
+  modifyProduct(oldName: string, newProduct: Product): Promise<Product> {
+    return <Promise<Product>>this._http.patch(environment.baseUrl + "product/" + oldName, newProduct).toPromise()
   }
 
   //Mettre des valeurs par défaut

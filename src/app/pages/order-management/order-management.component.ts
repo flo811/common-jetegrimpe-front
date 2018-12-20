@@ -24,9 +24,6 @@ export class OrderManagementComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pService.modifyProduct(this.product)
-      .then(prodModify => {this.product = prodModify;})
-      .catch(err => console.log(err));
   }
 
 

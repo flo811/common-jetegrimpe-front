@@ -48,6 +48,7 @@ const routes: Routes = [
   { path: 'produits/accessoires', component: CategoriesComponent},
   { path: 'produits/systeme-assurage', component: CategoriesComponent},
   { path: 'produits/baudriers', component: CategoriesComponent},
+  { path: 'produits/modifier/:name', component: ModifyProductComponent},
   { path: 'profil', component: ProfilComponent},
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
   { path: 'gestion-des-produits', component: OrderManagementComponent },
