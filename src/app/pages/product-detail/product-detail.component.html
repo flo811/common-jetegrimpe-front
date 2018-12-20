@@ -1,17 +1,24 @@
-<div>
-  <div>
-    <img src={{product.photo}} alt="product picture" />
-    <div>
-      <p>{{product.name}}</p>
-      <p>{{product.description}}</p>
-      <p>Prix : {{product.price}}€</p>
-      <p [hidden]="!isLessThan10()">Il n'en reste que : {{product.quantity}} à grimper !</p>
-    </div>
+<div class="container">
+
+  <div class="row justify-content-center">
+    <img class="col-8 col-lg-5" src={{product.photo}} alt="product picture" />
   </div>
-  <div>
-    <button mdbBtn color="primary" [disabled]="!isAvailable()" (click)="addToPanier()">Grimper au panier</button>
-    <p [hidden]="isAvailable()">Il n'en reste plus !</p>
-    <button *ngIf="admin" mdbBtn color="danger" (click)="deleteProduct()">Descendre de la base</button>
-    <p class="validationDescente" *ngIf="productDeleted"> Produit descendu!!</p>
+  
+  <div class="row justify-content-center">
+
+    <div class="col-12 col-lg-5">
+      <h4>{{product.name}}</h4>
+      <p>{{product.description}}</p>
+      <p><strong>Prix : {{product.price}}€</strong></p>
+      <p class="laVieEnRouge" [hidden]="!isLessThan10()">Il n'en reste que : {{product.quantity}} à grimper !</p>
+    </div>
+
+    <div class="col-12 col-lg-5 colBoutons">
+      <button mdbBtn color="primary" [disabled]="!isAvailable()" (click)="addToPanier()">Grimper au panier</button>
+      <p [hidden]="isAvailable()">Il n'en reste plus !</p>
+      <button *ngIf="admin" mdbBtn color="danger" (click)="deleteProduct()">Descendre de la base</button>
+      <p class="laVieEnRouge" *ngIf="productDeleted"> Produit descendu!!</p>
+    </div>
+
   </div>
 </div>
