@@ -128,7 +128,7 @@
 
 <div id="form">
   <div class="md-form">
-    <i class="fa fa-search prefix grey-text"></i>
+    <i class="fa fa-tag prefix grey-text"></i>
     <input [(ngModel)]="name" type="search" [validateSuccess]="false" id="defaultForm-search" class="form-control" name="search"
       mdbInputDirective #champ1="ngModel" required>
     <label for="defaultForm-search">Nom du produit</label>
@@ -174,15 +174,15 @@
 
 </div>
 
-<div>
-  <div *ngFor="let element of resultList">
+<div class="row">
+  <div class="col-sm-3 colMarge" *ngFor="let element of resultList">
     <app-product-item [product]="element"></app-product-item>
   </div>
 </div>
 
-<div>
+<div class="row rowPage justify-content-center align-items-center">
   <div *ngFor='let page of pageNbrList'>
-    <button (click)="setPage(page)">{{page}}</button>
+    <button class="btnPage" (click)="setPage(page)">{{page}}</button>
   </div>
 </div>
 

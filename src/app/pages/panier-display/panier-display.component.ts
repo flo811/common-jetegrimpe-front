@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PanierService } from 'src/app/graphicalElements/services/panier.service';
 import { Product } from 'src/app/model/product';
 
@@ -11,6 +11,10 @@ import { Product } from 'src/app/model/product';
 export class PanierDisplayComponent implements OnInit {
 
   panierList: Map<Product, number>
+
+  @Input() product:Product
+
+  total:number =0;
 
   constructor(private _panierService: PanierService) { this.actualize() }
 
@@ -35,4 +39,13 @@ export class PanierDisplayComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+  // Calcul total commands
+  totalPanier():number{
+    this.total = 0;
+    this.panierList.forEach((number, product)=> this.total += product.price*number)
+    return this.total;
+  }
+
 }
