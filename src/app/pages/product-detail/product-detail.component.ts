@@ -25,10 +25,6 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getByName(this.route.snapshot.paramMap.get("name"))
       .then(product => this.product = product)
       .catch(err => console.log(err));
-
-     
-    this._authSrv.collegueConnecteObs
-    .subscribe(col => { this.admin = col.estConnuEtAdmin() }); 
   }
 
   isLessThan10(): boolean { return this.product.quantity < 10 }
@@ -45,10 +41,10 @@ export class ProductDetailComponent implements OnInit {
     if (confirm("Voulez vous vraiment supprimer ce produit?")) {
 
       this.productService.deleteProductByName(this.product.name)
-                      .then(response => {this.productDeleted = true;
+                      .then(() => {this.productDeleted = true;
                                          setTimeout(() => {
                                            this._router.navigate(['/accueil'])
-                                          }, 3000)})
+                                          }, 2000)})
                       .catch(err => console.log(err.message))
 
                       
@@ -57,5 +53,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._authSrv.verifierAuthentification().subscribe(col => { this.admin = col.estConnuEtAdmin(); console.log(this.admin) }); 
   }
 }
