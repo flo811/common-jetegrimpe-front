@@ -9,6 +9,12 @@
 
 h1{margin: 50px 0;}
 
+.btnDeconnecter {
+    position: absolute;
+    right: 0;
+    transform: translate(0%,-200%);
+}
+
    
     /********************************************************************* MENU *****************************************************************/
 app-menu svg{
@@ -374,4 +380,17 @@ button.btnAjoutSuppr, button.btnPage{
 button.btnPage{margin: 0 2px; background-color: #02C39A}
 .rowPage{padding: 15px 0 25px 0;}
 
-    /*************************************************************************** RESPONSIVE **********************************************************************/
+
+/************************************************************************* CONTACT **********************************************************************************/
+#map{width: 100%;}
+#map iframe{width: 100%; height: 500px;}
+
+.rowMarge{margin-bottom: 50px;}
+
+.btnForm{background-color: #02C39A;}
+
+.rowMargeTop{margin: 150px 0 ;}
+
+.rowMargeTop img{
+transform:rotate(90deg);
+}
