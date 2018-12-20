@@ -1,25 +1,32 @@
 <div class="container">
   <div class="row justify-content-around align-items-center">
-
     <h1>Votre panier</h1>
   </div>
+  <div class="row justify-content-end align-items-center">
+        <div class="columnTotal">
+            <p class="totalProd">Total de votre panier :</p>
+            <p class="priceProd">{{totalPanier()}}</p>
+            <button class="savePanier">Valider votre panier</button>
+        </div>
+  </div>
+
 
 <div *ngFor="let item of panierList | keyvalue">
-    <div class="row justify-content-around align-items-center">
+    <div class="row justify-content-around align-items-center rowPad">
 
       <div class="col-3">
           <img src='{{item.key.photo}}'>
       </div>
       <div class="col-7">
-          <p>{{item.key.name}}</p>
+          <p class="nameProd">{{item.key.name}}</p>
           <p>Prix unitaire : {{item.key.price}}</p>
           <p>Quantité sélectionnée : {{item.value}}</p>
-          <button (click)="addOne(item.key)">+</button>
-          <button (click)="subtractOne(item.key)">-</button>
+          <button class="btnAjoutSuppr" (click)="addOne(item.key)">+</button>
+          <button class="btnAjoutSuppr" (click)="subtractOne(item.key)">-</button>
       </div>
       <div clas="col-2">
-          <p>Prix : {{item.key.price*item.value}}</p>
-          <button>Supprimer votre article</button>
+          <p class="priceProd">Prix : {{item.key.price*item.value}}</p>
+          <button class="btnSuppr" color="danger">Supprimer votre article</button>
       </div>
   </div>
 </div>

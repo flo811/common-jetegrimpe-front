@@ -1,5 +1,5 @@
-<div>
-  <div *ngFor="let element of itemList">
+<div class="row">
+  <div class="col-sm-3 colMarge" *ngFor="let element of itemList">
       <app-product-item [product]="element" (toDelete)="deleteFromTab(element)"></app-product-item>
   </div>
 </div>

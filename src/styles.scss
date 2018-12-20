@@ -7,7 +7,13 @@
     margin: 0; 
 }
 
-h1{margin-bottom: 50px;}
+h1{margin: 50px 0;}
+
+.btnDeconnecter {
+    position: absolute;
+    right: 0;
+    transform: translate(0%,-200%);
+}
 
    
     /********************************************************************* MENU *****************************************************************/
@@ -160,6 +166,7 @@ mdb-card-header.white-text.card-header{
     background-color: #02C39A;
 }
 
+
 .ajoutUser{
     padding: 30px 0;
     text-align: center;
@@ -222,6 +229,10 @@ mdb-card-header.white-text.card-header{
 
 .rowCategorie{
     padding: 50px 0;
+}
+
+.colMarge{
+    margin: 1% 0;
 }
 
 
@@ -300,4 +311,86 @@ app-panier-display .container{
 }
 
 
-    /*************************************************************************** RESPONSIVE **********************************************************************/
+.nameProd{
+    font-size: 25px; font-weight: 600;
+}
+
+.rowPad{
+    padding-top: 35px;
+}
+
+.priceProd, .totalProd{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.priceProd::after{
+    content: '€';
+}
+
+.columnTotal{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    background-color: #05668D;
+    color: white;
+    padding: 15px;
+}
+
+
+button.btnSuppr{
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #ff3547;
+    padding: 10px;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+}
+
+button.savePanier{
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #02C39A;
+    padding: 10px;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+button.btnPage:hover, button.btnPage:focus, button.btnPage:active, button.btnSuppr:hover, button.btnSuppr:focus, button.btnSuppr:active, button.btnAjoutSuppr:hover, button.btnAjoutSuppr:focus, button.btnAjoutSuppr:active, button.savePanier:hover, button.savePanier:focus, button.savePanier:active{
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+button.btnAjoutSuppr, button.btnPage{
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: black;
+    color: white;
+    padding: 2px 5px;
+    margin: 0 1%;
+    border-style: none;
+    cursor: pointer;
+    width: 28px;
+}
+
+button.btnPage{margin: 0 2px; background-color: #02C39A}
+.rowPage{padding: 15px 0 25px 0;}
+
+
+/************************************************************************* CONTACT **********************************************************************************/
+#map{width: 100%;}
+#map iframe{width: 100%; height: 500px;}
+
+.rowMarge{margin-bottom: 50px;}
+
+.btnForm{background-color: #02C39A;}
+
+.rowMargeTop{margin: 150px 0 ;}
+
+.rowMargeTop img{
+transform:rotate(90deg);
+}

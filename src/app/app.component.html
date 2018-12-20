@@ -1,12 +1,12 @@
 <app-menu></app-menu>
+<div *ngIf="!(collegueConnecte | async).estAnonyme()">
+    <!-- <span>{{(collegueConnecte | async).email}}</span> -->
+    <!-- <span>({{(collegueConnecte | async).roles}})</span> -->
+    <a class="btn btn-danger btnDeconnecter" (click)="seDeconnecter()">Se déconnecter</a>
+</div>
 
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
 
 
-<div *ngIf="!(collegueConnecte | async).estAnonyme()">
-        <span>{{(collegueConnecte | async).email}}</span>
-        <span>({{(collegueConnecte | async).roles}})</span>
-        <a class="btn btn-danger" (click)="seDeconnecter()">Se déconnecter</a>
-    </div>

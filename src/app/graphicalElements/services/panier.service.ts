@@ -49,4 +49,11 @@ export class PanierService {
   saveToLocaltorage() {
     localStorage.setItem(this.storageId, JSON.stringify(Array.from(this.panier.articles.entries())))
   }
+
+
+  savePanier(){
+    
+  }
+
+
 }
