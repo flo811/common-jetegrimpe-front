@@ -38,7 +38,7 @@ export class ProductItemComponent implements OnInit {
 
     this.productSrv.deleteProductByName(this.product.name)
                     .then(response => console.log(response.body))
-                    .catch(err => console.log(err.message)
+                    .catch(err => console.log(err.message))
     
   }
 }
