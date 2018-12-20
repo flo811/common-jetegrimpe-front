@@ -10,11 +10,8 @@ export class AccountCreateService {
 
   constructor(private _http: HttpClient) { }
 
-
-
   addPerson(name:string, firstName:string, adress:string, phone:number, email:string, birthDate:string, password:string):Promise<any>{
     return this._http.post(environment.baseUrl + "creer-compte", {name, firstName, adress, phone, email, birthDate, password})
                 .toPromise()
   }
-
 }

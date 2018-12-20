@@ -31,6 +31,7 @@ export class PanierDisplayComponent implements OnInit {
   }
 
   actualize() { this.panierList = this._panierService.getPanier().articles }
+ 
 
   ngOnInit() {
   }

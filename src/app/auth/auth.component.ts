@@ -23,13 +23,16 @@ export class AuthComponent implements OnInit {
   }
 
   connecter() {
+
+    console.log(this.collegue.email)
+
     this._authSrv.connecter(this.collegue.email, this.collegue.password)
       .subscribe(
         // en cas de succès, redirection vers la page /tech
         col => this._router.navigate(['/tech']),
 
         // en cas d'erreur, affichage d'un message d'erreur
-        err =>this.err = true
+        err =>{this.err = true;}
       );
   }
 }
