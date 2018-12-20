@@ -1,5 +1,5 @@
 <div>
   <div *ngFor="let element of itemList">
-      <app-product-item [product]="element"></app-product-item>
+      <app-product-item [product]="element" (toDelete)="deleteFromTab(element)"></app-product-item>
   </div>
 </div>

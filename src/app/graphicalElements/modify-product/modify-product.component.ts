@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModifyProductComponent implements OnInit {
 
+  //Ajouter le nom du produit en entrée! -> Si undefined champ vide.
+
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { PanierService } from '../services/panier.service';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -12,7 +12,9 @@ import { ProductService } from '../services/product.service';
 
 export class ProductItemComponent implements OnInit {
 
-  @Input() product: Product
+  @Input() product: Product;
+
+  @Output() toDelete : EventEmitter<void> = new EventEmitter<void>();
 
   admin: boolean;
 
@@ -37,9 +39,12 @@ export class ProductItemComponent implements OnInit {
   deleteProduct() {
 
     if (confirm("Voulez vous vraiment supprimer ce produit?")) {
+
       this.productSrv.deleteProductByName(this.product.name)
-                      .then(response => console.log(response.body))
+                      .then(response => this.toDelete.emit())
                       .catch(err => console.log(err.message))
+
+                      
     }
 
   }

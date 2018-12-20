@@ -23,4 +23,10 @@ export class CategoryItemsComponent implements OnInit {
       .then(productList => { this.itemList = productList })
       .catch(err => console.log(err))
   }
+
+
+  deleteFromTab(deletedProd:Product){
+    console.log(`${deletedProd.name} supprimé`)
+    this.itemList = this.itemList.filter(prod=> !(prod == deletedProd));
+  }
 }
