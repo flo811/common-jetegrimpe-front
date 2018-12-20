@@ -44,9 +44,12 @@ const routes: Routes = [
   { path: 'accueil', component: HomeComponent },
   { path: 'detail/:name', component: ProductDetailComponent },
   { path: 'produits/:type', component: SearchComponent },
-  { path: 'profil', component: ProfilComponent},
+
+  // { path: 'produits', component: SearchComponent },
+  { path: 'utilisateur/profil', component: ProfilComponent, canActivate: [StatutConnecteService]},
+
   { path: 'tech', component: TechComponent, canActivate: [StatutConnecteService] }, // /tech accessible uniquement si connecté
-  { path: 'gestion-des-produits', component: OrderManagementComponent },
+  { path: 'gestion-des-produits', component: OrderManagementComponent, canActivate: [StatutAdminService] },
   { path: 'contact', component: ContactComponent },
   { path: 'panier', component: PanierDisplayComponent },
   { path: 'auth', component: AuthComponent },
