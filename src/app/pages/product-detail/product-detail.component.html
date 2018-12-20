@@ -9,7 +9,9 @@
     </div>
   </div>
   <div>
-    <button [disabled]="!isAvailable()" (click)="addToPanier()">Grimper au panier</button>
+    <button mdbBtn color="primary" [disabled]="!isAvailable()" (click)="addToPanier()">Grimper au panier</button>
     <p [hidden]="isAvailable()">Il n'en reste plus !</p>
+    <button *ngIf="admin" mdbBtn color="danger" (click)="deleteProduct()">Descendre de la base</button>
+    <p class="validationDescente" *ngIf="productDeleted"> Produit descendu!!</p>
   </div>
 </div>

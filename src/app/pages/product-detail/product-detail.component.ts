@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/graphicalElements/services/product.service';
 import { Product } from 'src/app/model/product';
 import { ProductType } from 'src/app/model/productType';
 import { PanierService } from 'src/app/graphicalElements/services/panier.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -15,10 +16,19 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product = new Product("", "", "", 0, ProductType.Accessoire, true, 0)
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, private _panierService: PanierService) {
+  productDeleted: boolean =false;
+
+  admin: boolean;
+
+  constructor(private route: ActivatedRoute, private productService: ProductService, private _panierService: PanierService,
+              private _authSrv: AuthService, private _router:Router) {
     this.productService.getByName(this.route.snapshot.paramMap.get("name"))
       .then(product => this.product = product)
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
+
+     
+    this._authSrv.collegueConnecteObs
+    .subscribe(col => { this.admin = col.estConnuEtAdmin() }); 
   }
 
   isLessThan10(): boolean { return this.product.quantity < 10 }
@@ -28,6 +38,22 @@ export class ProductDetailComponent implements OnInit {
   addToPanier() {
     this._panierService.addToPanier(this.product)
     this.product.quantity -= 1
+  }
+
+  deleteProduct() {
+
+    if (confirm("Voulez vous vraiment supprimer ce produit?")) {
+
+      this.productService.deleteProductByName(this.product.name)
+                      .then(response => {this.productDeleted = true;
+                                         setTimeout(() => {
+                                           this._router.navigate(['/accueil'])
+                                          }, 3000)})
+                      .catch(err => console.log(err.message))
+
+                      
+    }
+
   }
 
   ngOnInit() {
