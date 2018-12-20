@@ -18,14 +18,12 @@ export class Collegue {
   }
 
   estAnonyme():boolean {
-    return this.email == undefined;
+    // return this.email == undefined;
+    return(this.roles == undefined)
   }
 
   estConnuEtAdmin():boolean {
-    if (this.roles == undefined){
-      return false;
-    }
-    
-    return this.roles.includes("ROLE_ADMINISTRATEUR");
+    // if (this.roles == undefined){ return false; }
+    return this.estAnonyme()? false : this.roles.includes("ROLE_ADMINISTRATEUR");
   }
 }

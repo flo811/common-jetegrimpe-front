@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { PanierService } from '../services/panier.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-product-item',
@@ -12,7 +13,13 @@ export class ProductItemComponent implements OnInit {
 
   @Input() product: Product
 
-  constructor(private _panierService: PanierService) { }
+  admin :boolean;
+
+  constructor(private _panierService: PanierService, private _authSrv:AuthService) { 
+
+    this._authSrv.collegueConnecteObs
+    .subscribe(col => {this.admin = col.estConnuEtAdmin()});
+  }
 
   isLessThan10(): boolean { return this.product.quantity < 10 }
 

@@ -79,8 +79,7 @@ export class AuthService {
         'Content-Type': 'application/x-www-form-urlencoded'
       })
     };
-    console.log(email, mdp);
-
+    
     return this._http.post(`${environment.baseUrl}${environment.apiLogin}`, new HttpParams().set('username', email).set('password', mdp), config)
       .pipe(
         map(colServeur => new Collegue(colServeur)),
