@@ -14,12 +14,12 @@ export class ProductItemComponent implements OnInit {
 
   @Input() product: Product
 
-  admin :boolean;
+  admin: boolean;
 
-  constructor(private _panierService: PanierService, private _authSrv:AuthService, private productSrv: ProductService) { 
+  constructor(private _panierService: PanierService, private _authSrv: AuthService, private productSrv: ProductService) {
 
     this._authSrv.collegueConnecteObs
-    .subscribe(col => {this.admin = col.estConnuEtAdmin()});
+      .subscribe(col => { this.admin = col.estConnuEtAdmin() });
   }
 
   isLessThan10(): boolean { return this.product.quantity < 10 }
@@ -34,11 +34,13 @@ export class ProductItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteProduct(){
+  deleteProduct() {
 
-    this.productSrv.deleteProductByName(this.product.name)
-                    .then(response => console.log(response.body))
-                    .catch(err => console.log(err.message))
-    
+    if (confirm("Voulez vous vraiment supprimer ce produit?")) {
+      this.productSrv.deleteProductByName(this.product.name)
+                      .then(response => console.log(response.body))
+                      .catch(err => console.log(err.message))
+    }
+
   }
 }
